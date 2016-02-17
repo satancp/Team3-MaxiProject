@@ -1,0 +1,81 @@
+<div class="modal-body">
+    <ul>
+    	<form name="form" ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}" novalidate>
+  			<div class="form-group">
+    			<label for="username">Username</label>
+    			<input type="username" name="username" id="username" ng-model="registrationForm.username" required="required" class="form-control" min="3" max="10">
+  				<span ng-show="form.username.$error.required || err && err.errors.username.type == 'required'">Please input username!</span>
+  				<span ng-show="form.username.$error.length.min || form.username.$error.length.max">Length of username is invalid!(Should be 3-10)</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="email">Email</label>
+    			<input type="email" name="email" id="email" ng-model="registrationForm.email" required="required" class="form-control">
+  				<span ng-show="form.email.$error.email">Email is invalid!</span>
+  				<span ng-show="form.email.$error.required || err && err.errors.email.type == 'required'">Please input email!</span>
+  				<span ng-show="err.code == 11000 || err.code == 11001"><font color="red">This email has been used!</font></span>
+  			</div>
+			<div class="form-group">
+    			<label for="password">Password</label>
+    			<input type="password" name="password" id="password" ng-model="registrationForm.password" required="required" class="form-control" min="7">
+  				<span ng-show="form.password.$error.length.min || err && err.errors.password">Length of password is too short!(At least 7)</span>
+  			</div>
+			<div class="form-group">
+    			<label for="password_confirmation">Password confirmation</label>
+    			<input type="password" name="password_confirmation" id="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" data-password-verify="registrationForm.password">
+  				<span ng-show="form.password_confirmation.$error.passwordVerify">Password is not correct!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="company">Company</label>
+    			<input type="company" name="company" id="company" ng-model="registrationForm.company" required="required" class="form-control">
+  				<span ng-show="form.company.$error.required || err && err.errors.company.type == 'required'">Please input company!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="business">Business</label>
+    			<select type="business" name="business" id="business" ng-model="registrationForm.business" required="required" class="form-control" ng-options="b.text for b in bs">
+  				<span ng-show="form.business.$error.required || err && err.errors.business.type == 'required'">Please select a business!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="squestion1">Security question 1</label>
+    			<select type="squestion1" name="squestion1" id="squestion1" ng-model="registrationForm.squestion1" required="required" class="form-control" ng-options="sq.text for sq in sqs1">
+  				<span ng-show="form.squestion1.$error.required || err && err.errors.squestion1.type == 'required'">Please select a question!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="answer1">Answer 1</label>
+    			<input type="answer1" name="answer1" id="answer1" ng-model="registrationForm.answer1" required="required" class="form-control">
+  				<span ng-show="form.answer1.$error.required || err && err.errors.answer1.type == 'required'">Please input answer!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="squestion2">Security question 2</label>
+    			<select type="squestion2" name="squestion2" id="squestion2" ng-model="registrationForm.squestion2" required="required" class="form-control" ng-options="sq.text for sq in sqs2">
+  				<span ng-show="form.squestion2.$error.required || err && err.errors.squestion2.type == 'required'">Please select a question!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="answer2">Answer 2</label>
+    			<input type="answer2" name="answer2" id="answer2" ng-model="registrationForm.answer2" required="required" class="form-control">
+  				<span ng-show="form.answer2.$error.required || err && err.errors.answer2.type == 'required'">Please input answer!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="squestion3">Security question 3</label>
+    			<select type="squestion3" name="squestion3" id="squestion3" ng-model="registrationForm.squestion3" required="required" class="form-control" ng-options="sq.text for sq in sqs3">
+  				<span ng-show="form.squestion3.$error.required || err && err.errors.squestion3.type == 'required'">Please select a question!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="answer3">Answer 3</label>
+    			<input type="answer3" name="answer3" id="answer3" ng-model="registrationForm.answer3" required="required" class="form-control">
+  				<span ng-show="form.answer3.$error.required || err && err.errors.answer3.type == 'required'">Please input answer!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="squestion4">Security question 4</label>
+    			<select type="squestion4" name="squestion4" id="squestion4" ng-model="registrationForm.squestion4" required="required" class="form-control" ng-options="sq.text for sq in sqs4">
+  				<span ng-show="form.squestion4.$error.required || err && err.errors.squestion4.type == 'required'">Please select a question!</span>
+  			</div>
+  			<div class="form-group">
+    			<label for="answer4">Answer 4</label>
+    			<input type="answer4" name="answer4" id="answer4" ng-model="registrationForm.answer4" required="required" class="form-control">
+  				<span ng-show="form.answer4.$error.required || err && err.errors.answer4.type == 'required'">Please input answer!</span>
+  			</div>
+			<button type="submit" class="btn btn-primary">Register</button>
+			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+		</form>
+	</ul>
+</div>

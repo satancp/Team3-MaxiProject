@@ -1,0 +1,23 @@
+/**
+ * Sequelize initialization module
+ */
+
+'use strict';
+
+import path from 'path';
+import config from '../config/environment';
+import Sequelize from 'sequelize';
+
+var db = {
+  Sequelize,
+  sequelize: new Sequelize(config.sequelize.database, config.sequelize.username, config.sequelize.password, config.sequelize.options)
+};
+
+// Insert models below
+db.Question = db.sequelize.import('../api/question/question.model');
+db.Business = db.sequelize.import('../api/business/business.model');
+db.Message = db.sequelize.import('../api/message/message.model');
+db.User = db.sequelize.import('../api/user/user.model');
+db.Thing = db.sequelize.import('../api/thing/thing.model');
+
+export default db;
