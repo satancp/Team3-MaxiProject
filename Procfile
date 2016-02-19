@@ -1,1 +1,1 @@
-web: pm2 start ./server/index.js
+web: node ./server/index.js
