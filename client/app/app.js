@@ -6,7 +6,6 @@ angular.module('maxiProjectApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'btford.socket-io',
   'ui.bootstrap',
   'ipCookie'
 ])

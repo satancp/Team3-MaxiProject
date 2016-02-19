@@ -13,7 +13,7 @@ function onDisconnect(socket) {
 function onConnect(socket) {
   // When the client emits 'info', this listens and executes
   socket.on('info', data => {
-    socket.log(JSON.stringify(data, null, 2));
+    
   });
 
   // Insert sockets below
@@ -50,11 +50,9 @@ module.exports = function(socketio) {
     // Call onDisconnect.
     socket.on('disconnect', () => {
       onDisconnect(socket);
-      socket.log('DISCONNECTED');
     });
 
     // Call onConnect.
     onConnect(socket);
-    socket.log('CONNECTED');
   });
 }
