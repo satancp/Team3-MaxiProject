@@ -4,10 +4,10 @@
 
 'use strict';
 
-import express from 'express';
-import sqldb from './sqldb';
-import config from './config/environment';
-import http from 'http';
+var express = require('express');
+var sqldb = require('./sqldb');
+var config = require('./config/environment');
+var http = require('http');
 
 // Populate databases with sample data
 if (config.seedDB) { require('./config/seed'); }
