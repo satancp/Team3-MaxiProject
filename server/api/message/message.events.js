@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+var {EventEmitter} = require('events');
 var Message = require('../../sqldb').Message;
 var MessageEvents = new EventEmitter();
 
@@ -32,4 +32,4 @@ function emitEvent(event) {
   }
 }
 
-export default MessageEvents;
+module.exports = MessageEvents;

@@ -4,7 +4,7 @@
 
 'use strict';
 
-import {EventEmitter} from 'events';
+var {EventEmitter} = require('events');
 var Business = require('../../sqldb').Business;
 var BusinessEvents = new EventEmitter();
 
@@ -32,4 +32,4 @@ function emitEvent(event) {
   }
 }
 
-export default BusinessEvents;
+module.exports = BusinessEvents;

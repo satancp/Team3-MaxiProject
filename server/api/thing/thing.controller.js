@@ -9,7 +9,7 @@
 
 'use strict';
 
-import _ from 'lodash';
+var _ = require('lodash');
 var sqldb = require('../../sqldb');
 var Thing = sqldb.Thing;
 
