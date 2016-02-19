@@ -20,4 +20,4 @@ db.Message = db.sequelize.import('../api/message/message.model');
 db.User = db.sequelize.import('../api/user/user.model');
 db.Thing = db.sequelize.import('../api/thing/thing.model');
 
-export default db;
+module.exports = db;
