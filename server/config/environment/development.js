@@ -10,7 +10,7 @@ module.exports = {
     username: 'root',
     password: 'wsxjw113',
     options: {
-      host: 'localhost',
+      host: '143.167.179.154',
       port: 3306,
       dialect: 'mysql',
       pool: {
