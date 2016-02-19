@@ -60,14 +60,14 @@ function removeEntity(res) {
 }
 
 // Gets a list of Businesss
-export function index(req, res) {
+exports.index = function index(req, res) {
   Business.findAll()
     .then(responseWithResult(res))
     .catch(handleError(res));
 }
 
 // Gets a single Business from the DB
-export function show(req, res) {
+exports.show = function show(req, res) {
   Business.find({
     where: {
       _id: req.params.id
