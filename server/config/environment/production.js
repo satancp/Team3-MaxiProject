@@ -14,11 +14,11 @@ module.exports = {
           8080,
 
   sequelize: {
-    database: 'maxi',
-    username: 'root',
-    password: 'wsxjw113',
+    database: 'heroku_bca1b707fca7342',
+    username: 'b5fe6333c033ca',
+    password: '4fdd79a4',
     options: {
-      host: '143.167.179.154',
+      host: 'us-cdbr-iron-east-03.cleardb.net',
       port: 3306,
       dialect: 'mysql',
       pool: {
