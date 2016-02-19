@@ -4,7 +4,7 @@
  */
 
 'use strict';
-import sqldb from '../sqldb';
+var sqldb = require('../sqldb');
 var Thing = sqldb.Thing;
 
 Thing.sync()
