@@ -38,7 +38,7 @@ angular.module('maxiProjectApp')
       animation: $scope.animationsEnabled,
       templateUrl: 'app/signup/signup.html',
       controller: 'SignupCtrl',
-      size: 'sm',
+      size: '',
     });
   };
 });
