@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Question', {
+  return sequelize.define('Material', {
     _id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -9,7 +9,17 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    question: {
+    name: {
+      DataTypes.STRING,
+      allowNull: false,
+      editable: true
+    },
+    type: {
+      DataTypes.STRING,
+      allowNull: false,
+      editable: true
+    },
+    application: {
       DataTypes.STRING,
       allowNull: false,
       editable: true

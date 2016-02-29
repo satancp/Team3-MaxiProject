@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Message', {
+  return sequelize.define('Request', {
     _id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -9,33 +9,27 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    contents: {
-      DataTypes.TEXT,
-      allowNull: false,
-      editable: false
-    }
-    date: {
-      DataTypes.DATE,
-      editable: false
-    }
-    sender_id:　{
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
         key: 'id',
       }
-      editable: false
+      editable: true
     },
-    receiver_id: {
+    material_id: {
       type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'user',
-          key: 'id',
+      allowNull: false,
+      references: {
+        model: 'material',
+        key: 'id',
       }
-      editable: false
+      editable: true
     },
-    state: DataTypes.BOOLEAN
+    date: {
+      DataTypes.DATE,
+      allowNull: false
+    }
   });
 }

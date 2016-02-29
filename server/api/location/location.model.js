@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Business', {
+  return sequelize.define('Location', {
     _id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -9,9 +9,11 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    business_name: DataTypes.STRING
-    allowNull: false,
-    editable: true
     },
+    locaiton_range: {
+      DataTypes.STRING,
+      allowNull: false,
+      editable: true
+    }
   });
 }

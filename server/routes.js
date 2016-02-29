@@ -9,6 +9,11 @@ var path = require('path');
 
 module.exports = function(app) {
   // Insert routes below
+  app.use('/api/offers', require('./api/offer'));
+  app.use('/api/requests', require('./api/request'));
+  app.use('/api/locations', require('./api/location'));
+  app.use('/api/newss', require('./api/news'));
+  app.use('/api/materials', require('./api/material'));
   app.use('/api/questions', require('./api/question'));
   app.use('/api/businesss', require('./api/business'));
   app.use('/api/messages', require('./api/message'));
