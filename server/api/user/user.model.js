@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function(sequelize, DataTypes) {
+var User = module.exports = function(sequelize, DataTypes) {
   return sequelize.define('User', {
-    _id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'business',
+        model: 'Businesses',
         key: 'id'
       },
       editable: true
@@ -48,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'question',
+        model: 'Questions',
         key: 'id'
       }
     },
@@ -60,7 +60,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'question',
+        model: 'Questions',
         key: 'id'
       }
     },
@@ -72,7 +72,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'question',
+        model: 'Questions',
         key: 'id'
       }
     },
@@ -83,3 +83,4 @@ module.exports = function(sequelize, DataTypes) {
     power: DataTypes.BOOLEAN
   });
 }
+

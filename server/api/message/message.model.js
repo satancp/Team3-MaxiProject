@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Message', {
-    _id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'Users',
         key: 'id'
       },
       editable: false
@@ -31,7 +31,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'user',
+          model: 'Users',
           key: 'id'
       },
       editable: false

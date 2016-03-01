@@ -1,11 +1,9 @@
-<div class="navbar navbar-default navbar-static-bottom" ng-controller="FooterController">
-  <div class="container">
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
+<div id="footer" ng-controller="FooterController">
+	<ul>
         <li ng-repeat="item in footer.menu">
-          <a ng-href="{{item.link}}">{{item.title}}</a>
+        	<a ng-href="{{item.link}}">
+        		{{item.title}}
+        	</a>
         </li>
-      </ul>
-    </div>
-  </div>
+    </ul>
 </div>

@@ -24,6 +24,7 @@ class NavbarController {
       $location.path('/');
       $route.reload();
     };
+    $scope.date = new Date();
     $scope.search = function () {
       alert($scope.keywords);
     };
@@ -33,7 +34,7 @@ class NavbarController {
         animation: $scope.animationsEnabled,
         templateUrl: 'app/signin/signin.html',
         controller: 'SigninCtrl',
-        size: 'sm',
+        size: 'sm'
       });
     };
   }

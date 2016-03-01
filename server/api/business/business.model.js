@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('Business', {
-    _id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -13,6 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     allowNull: false,
     editable: true
-    },
+    }
   });
 }

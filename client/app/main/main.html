@@ -1,20 +1,56 @@
 <navbar>
 </navbar>
-	<leftinfo>
-		<label for="date">
-			{{date | date:'yyyy.MM.dd'}}
-		</label>
-		<br/>
-		<label time-update="format"/>
-		<br/>
-		<label for="usernumbers">
-			Current online users:
-			<br/>
-			{{numbers}}
-		</label>
-	</leftinfo>
-	<imageslide>
-		<div style="height: 305px">
+<div id="dynamicbutton"><button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">  Find a product
+      </button>
+      <br>
+    <div id="visible" uib-collapse="isCollapsed">
+      <div class="btn-group" uib-dropdown is-open="status1.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Select Business
+                <span class="caret">
+                </span>
+              </button>
+              <ul uib-dropdown-menu aria-labelledby="single-button">
+                <li ng-repeat="selection in selections">
+                  <a href="#">{{selection}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group" uib-dropdown is-open="status2.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Select Category
+                <span class="caret">
+                </span>
+              </button>
+              <ul uib-dropdown-menu aria-labelledby="single-button">
+                <li ng-repeat="selection in selections">
+                  <a href="#">{{selection}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-group" uib-dropdown is-open="status3.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                Select Market
+                <span class="caret">
+                </span>
+              </button>
+              <ul uib-dropdown-menu aria-labelledby="single-button">
+                <li ng-repeat="selection in selections">
+                  <a href="#">{{selection}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <button id="get" type="button" class="btn btn-primary" ng-click="getData()">
+              Get
+            </button>
+      </div>
+    </div>
+    </div></div>
+	<div id="imageside">
+		<div style="height: 300px;width: 800px">
     		<uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
       			<uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
       				<a href="{{slide.link}}">
@@ -28,69 +64,19 @@
       			</uib-slide>
     		</uib-carousel>
   		</div>
-  		<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">	Find a product
-  		</button>
-		<hr>
-		<div uib-collapse="isCollapsed">
-			<div class="well well-sm">
-				<div class="btn-group" uib-dropdown is-open="status1.isopen">
-					<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        				Select Business
-        				<span class="caret">
-        				</span>
-      				</button>
-      				<ul uib-dropdown-menu aria-labelledby="single-button">
-        				<li ng-repeat="selection in selections">
-        					<a href="#">{{selection}}
-        					</a>
-        				</li>
-      				</ul>
-      			</div>
-      			<div class="btn-group" uib-dropdown is-open="status2.isopen">
-					<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        				Select Category
-        				<span class="caret">
-        				</span>
-      				</button>
-      				<ul uib-dropdown-menu aria-labelledby="single-button">
-        				<li ng-repeat="selection in selections">
-        					<a href="#">{{selection}}
-        					</a>
-        				</li>
-      				</ul>
-      			</div>
-      			<div class="btn-group" uib-dropdown is-open="status3.isopen">
-					<button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-        				Select Market
-        				<span class="caret">
-        				</span>
-      				</button>
-      				<ul uib-dropdown-menu aria-labelledby="single-button">
-        				<li ng-repeat="selection in selections">
-        					<a href="#">{{selection}}
-        					</a>
-        				</li>
-      				</ul>
-      			</div>
-      			<button id="get" type="button" class="btn btn-primary" ng-click="getData()">
-      				Get
-      			</button>
-			</div>
-		</div>
-	</imageslide>
-	<news>
+  	</div>
 		<div>
 			<ul ng-repeat="news in allnews">
-				<h4>
-					{{news.date}}
-				</h4>
+				<div id="news">
+					{{news.date}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <br/>
 				<a href="/news/{{news.id}}">
-					<p>
-						{{news.title}}
-					</p>
+					
+						{{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
+        </div>
+
 			</ul>
 		</div>
-	</news>
 <footer>
 </footer>

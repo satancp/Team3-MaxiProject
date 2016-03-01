@@ -1,39 +1,67 @@
-<div class="navbar navbar-default navbar-static-top" ng-controller="NavbarController">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <!-- <img alt="Brand" src="assets/images/yeoman.png"> -->
+<div id="navigation" ng-controller="NavbarController">
+  <ul>
+    <li>
+      <date>
+        {{date | date:'yyyy.MM.dd'}}
+      </date>
+    </li>
+    <li>
+      <time time-update="format"/>
+    </li>
+    <li ng-repeat="item in nav.menu">
+      <a ng-href="{{item.link}}">
+        {{item.title}}
       </a>
-    </div>
-    <div class="navbar-collapse collapse" id="navbar-main">
-      <ul class="nav navbar-nav">
-        <li ng-repeat="item in nav.menu">
-          <a ng-href="{{item.link}}">{{item.title}}</a>
-        </li>
-        <li class="dropdown" uib-dropdown on-toggle="toggled(open)" ng-show="state_cookie==1">
-          <a href id="simple-dropdown" uib-dropdown-toggle>
+    </li>
+    <li class="dropdown" uib-dropdown on-toggle="toggled(open)" ng-show="state_cookie==1">
+      <a href id="simple-dropdown" uib-dropdown-toggle>
+        Profile
+      </a>
+      <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
+        <li>
+          <a href="#">
             Profile
           </a>
-          <ul class="uib-dropdown-menu" aria-labelledby="simple-dropdown">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Update</a></li>
-            <li><a href="#">Message List</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Post New</a></li>
-            <li><a href="#">Request New</a></li>
-          </ul>
         </li>
         <li>
-          <a ng-show="!state_cookie" ng-click="login()" ng-href="#">Login</a>
-          <a ng-show="state_cookie" ng-click="logout()" ng-href="#">Logout</a>
+          <a href="#">
+            Update
+          </a>
         </li>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="any keywords" ng-model="keywords">
-          </div>
-          <button type="submit" class="btn btn-default" ng-click="search()">Search</button>
-        </form>
+        <li>
+          <a href="#">
+            Message List
+          </a>
+        </li>
+        <li role="separator" class="divider">
+        </li>
+        <li>
+          <a href="#">
+            Post New
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Request New
+          </a>
+        </li>
       </ul>
-    </div>
-  </div>
+    </li>
+    <li>
+      <a ng-show="!state_cookie" ng-click="login()" ng-href="#">
+        Login
+      </a>
+      <a ng-show="state_cookie" ng-click="logout()" ng-href="#">
+        Logout
+      </a>
+    </li>
+    <li>
+      <input type="text" placeholder="any keywords" ng-model="keywords"/>
+    </li>
+    <li> 
+      <button type="submit" class="btn btn-default" ng-click="search()">
+        Search
+      </button>
+    </li>
+  </ul>
 </div>

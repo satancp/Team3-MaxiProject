@@ -38,3 +38,126 @@
   padding: 0.2em 0;
 }
 
+#navigation ul{
+    background-color: #6495ED;
+    font-size: 12px;
+    margin: 0px;
+    height: 50px; 
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px; Verdana,Georgia,serif;
+}
+#navigation ul li{
+    display: inline;
+    list-style-type: none;
+  
+}
+#navigation ul li date{
+    font-size: 14px;
+    color:black;
+    position: relative;
+    right: 100px;
+}
+#navigation ul li time{
+    font-size: 14px;
+    color:black;
+    position: relative;
+    right: 80px;
+}
+#navigation ul li a{
+    background-color: #6495ED;
+    padding: .2em 1em;
+    font-family: Arial;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#navigation input{
+    background-color: #fff;
+    padding: .2em 1em;
+    font-size: 12px;
+    font-family: Arial;
+    color:#000;
+    text-align: left;
+    border-radius: 5px;
+}
+
+#navigation button{
+    background-color: #fff;
+    padding: .2em 1em;
+    font-size: 12px;
+    font-family: Arial;
+    color:#000;
+    text-align: left;
+    border-radius: 5px;
+}
+
+
+#navigation ul li a:hover{
+    color: #000;
+    background-color:yellow;
+}
+
+#navigation button:hover{
+    color: #000;
+    background-color:yellow;
+}
+
+#imageside {
+  margin:100px;
+  position: relative;
+  left:150px;
+  top:0px;
+}
+
+#news {
+  position: relative;
+  left:-150px;
+  top:-40px;
+  float: right;
+}
+
+#dynamicbutton {
+  position: relative;
+  left:580px;
+  top:50px;
+}
+#visible {
+  position: relative;
+  left:-170px;
+  top:10px;
+}
+
+#footer{
+    background-color: white;
+    margin: 10px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 90%;
+    padding: 15px;
+    text-align: center;
+    clear: both;
+}
+
+
+#footer ul li{
+    display: inline;
+    list-style-type: none;
+}
+
+#footer ul li a{
+    background-color: white;
+    padding: .2em 1em;
+    font-family: Arial;
+    color:black;
+    text-decoration: none;
+}
+#footer ul li a:hover{
+    color: #000;
+    background-color:white;
+}
+span{
+  color:white;
+}

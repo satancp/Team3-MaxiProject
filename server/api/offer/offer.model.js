@@ -2,7 +2,7 @@
 
 export default function(sequelize, DataTypes) {
   return sequelize.define('Offer', {
-    _id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -13,7 +13,7 @@ export default function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'material',
+        model: 'Materials',
         key: 'id'
       },
       editable: true
@@ -26,7 +26,7 @@ export default function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'Users',
         key: 'id'
       },
       editable: true
@@ -40,7 +40,7 @@ export default function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'user',
+        model: 'Locations',
         key: 'id'
       },
       editable: true
