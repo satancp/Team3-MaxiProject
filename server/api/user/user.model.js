@@ -10,12 +10,12 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true
     },
     username: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: false
     },
     password: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     },
@@ -40,8 +40,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'business',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     question_id1: {

@@ -10,21 +10,21 @@ module.exports = function(sequelize, DataTypes) {
       editable: false
     },
     contents: {
-      DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false,
       editable: false
-    }
+    },
     date: {
-      DataTypes.DATE,
+      type: DataTypes.DATE,
       editable: false
-    }
+    },
     sender_id:　{
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: false
     },
     receiver_id: {
@@ -32,10 +32,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         references: {
           model: 'user',
-          key: 'id',
-      }
+          key: 'id'
+      },
       editable: false
     },
-    state: DataTypes.BOOLEAN
+    state: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false
+    }
   });
 }

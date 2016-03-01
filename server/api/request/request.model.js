@@ -14,8 +14,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     material_id: {
@@ -23,12 +23,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'material',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     date: {
-      DataTypes.DATE,
+      type: DataTypes.DATE,
       allowNull: false
     }
   });

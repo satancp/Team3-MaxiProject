@@ -23,6 +23,5 @@ db.Question = db.sequelize.import('../api/question/question.model');
 db.Business = db.sequelize.import('../api/business/business.model');
 db.Message = db.sequelize.import('../api/message/message.model');
 db.User = db.sequelize.import('../api/user/user.model');
-db.Thing = db.sequelize.import('../api/thing/thing.model');
 
 module.exports = db;

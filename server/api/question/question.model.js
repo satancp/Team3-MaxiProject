@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
       editable: false
     },
     question: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     }

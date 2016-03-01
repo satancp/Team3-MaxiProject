@@ -10,17 +10,17 @@ module.exports = function(sequelize, DataTypes) {
       editable: false
     },
     name: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     },
     type: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     },
     application: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     }

@@ -9,9 +9,8 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    },
     locaiton_range: {
-      DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     }

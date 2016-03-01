@@ -14,12 +14,12 @@ export default function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'material',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     due_date: {
-      DataTypes.DATE,
+      type: DataTypes.DATE,
       allowNull: false
     },
     poster_id: {
@@ -27,12 +27,12 @@ export default function(sequelize, DataTypes) {
       allowNull: false,
       references: {
         model: 'user',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     weight: {
-      DataTypes.FLOAT,
+      type: DataTypes.FLOAT,
       allowNull: false,
       editable: false
     },
@@ -41,17 +41,17 @@ export default function(sequelize, DataTypes) {
       allowNull: true,
       references: {
         model: 'user',
-        key: 'id',
-      }
+        key: 'id'
+      },
       editable: true
     },
     extraInfo: {
-      DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: true,
       editable: true
-    }
+    },
     price: {
-      DataTypes.FLOAT,
+      type: DataTypes.FLOAT,
       allowNull: true,
       editable: true
     }
