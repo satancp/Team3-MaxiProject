@@ -25,7 +25,7 @@ angular.module('maxiProjectApp')
     	$scope.popup1.opened = true;
     };
     $scope.setDate = function (year, month, day) {
-    	$scope..dt = new Date(year, month, day);
+    	$scope.dt = new Date(year, month, day);
     };
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
