@@ -3,8 +3,8 @@
 angular.module('maxiProjectApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/MaterialPost', {
-        templateUrl: 'app/MaterialPost/MaterialPost.html',
-        controller: 'MaterialPostCtrl'
+      .when('/materialpost', {
+        templateUrl: 'app/materialpost/materialpost.html',
+        controller: 'MaterialpostCtrl'
       });
   });
