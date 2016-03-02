@@ -7,7 +7,8 @@ angular.module('maxiProjectApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'ipCookie'
+  'ipCookie',
+  'ngTable'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

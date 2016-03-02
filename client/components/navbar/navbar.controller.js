@@ -24,6 +24,7 @@ class NavbarController {
       $location.path('/');
       $route.reload();
     };
+    $scope.format = "h:mm:ss a";
     $scope.date = new Date();
     $scope.search = function () {
       alert($scope.keywords);

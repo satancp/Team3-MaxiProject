@@ -4,9 +4,13 @@ angular.module('maxiProjectApp')
   		//News.getLatest().success(function (news) {
   		//$scope.numbers = numbers;
   		//$scope.allnews = news;
+      $scope.bs = [{text:"This is a business"}];
+      $scope.ca = [{text:"This is a category"}];
+      $scope.ma = [{text:"This is a market"}];
   		$scope.isCollapsed = true;
-  		$scope.getData = function() {
-
+  		$scope.get = function() {
+        $location.path('/informationdisplay');
+        $route.reload();
   		};
   		$scope.status1 = {
     		isopen: false
@@ -40,14 +44,11 @@ angular.module('maxiProjectApp')
          content:"The contents",
          id:4}
   		];
-  		$scope.numbers = 19872;
-  		$scope.format = "h:mm:ss a";
   		$scope.date = new Date();
   		$scope.myInterval = 5000;
   		$scope.noWrapSlides = false;
   		$scope.active = 0;
   		$scope.currentIndex = 2;
-  		$scope.selections = ["one","two","three"];
   		$scope.slides = 
   		[
   			{image: 'http://lorempixel.com/600/300',
