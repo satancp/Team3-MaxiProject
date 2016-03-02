@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('MaterialPostCtrl', function ($scope) {
+  .controller('materialpostCtrl', function ($scope) {
     $scope.today = function () {
     	$scope.dt = new Date();
     };
