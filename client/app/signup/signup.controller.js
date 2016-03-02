@@ -1,30 +1,39 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('SignupCtrl', function ($scope, ipCookie, User, $uibModalInstance, $location, $route) {
-  $scope.bs = [{text:"This is a business"}];
-  $scope.sqs = [{text:"This is a question"}];
-  $scope.la = [{text:"This is a location"}];
-  $scope.handleRegBtnClick = function () {
-    var data = new Object();
-    data.username = $scope.registrationForm.username;
-    data.email = $scope.registrationForm.email;
-    data.password = $scope.registrationForm.password;
-    data.company = $scope.registrationForm.company;
-    data.business = $scope.registrationForm.business;
-    data.squestion = $scope.registrationForm.squestion;
-    data.answer = $scope.registrationForm.answer;
-    User.addUser(data).success(function (added_user) {
-      $uibModalInstance.dismiss('ok');
-      $scope.err = undefined;
-      ipCookie('LoginUser',added_user);
-      $location.path('/users/'+ added_user._id);
-      $route.reload();
-    }).error(function(err){
-      $scope.err = err;
+  .controller('SignupCtrl', function ($scope, ipCookie, Location, Business, Question, User, $uibModalInstance, $location, $route) {
+  Business.getallBusiness().success(function(bs) {
+    $scope.bs = bs;
+    Location.getallLocation().success(function(la) {
+      $scope.la = la;
+      Question.getallQuestion().success(function(sqs) {
+        $scope.sqs = sqs;
+        $scope.handleRegBtnClick = function () {
+          var data = new Object();
+          data.name = $scope.registrationForm.name;
+          data.email = $scope.registrationForm.email;
+          data.password = $scope.registrationForm.password;
+          data.company = $scope.registrationForm.company;
+          data.business_id = $scope.registrationForm.business.id;
+          data.question_id = $scope.registrationForm.question.id;
+          data.answer = $scope.registrationForm.answer;
+          data.phonenumber = $scope.registrationForm.phonenumber;
+          User.addUser(data).success(function (added_user) {
+            alert("Successfully!Enjoy~");
+            $uibModalInstance.dismiss('ok');
+            $scope.err = undefined;
+            ipCookie('LoginUser',1);
+            ipCookie('Login',added_user);
+            $location.path('/');
+            $route.reload();
+          }).error(function(err){
+            $scope.err = err;
+          });
+        };
+        $scope.cancel = function () {
+          $uibModalInstance.dismiss('cancel');
+        };
+      });
     });
-  };
-  $scope.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
+  });
 });

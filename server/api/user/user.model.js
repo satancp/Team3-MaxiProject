@@ -9,7 +9,7 @@ var User = module.exports = function(sequelize, DataTypes) {
       editable: false,
       autoIncrement: true
     },
-    username: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       editable: false
@@ -19,13 +19,13 @@ var User = module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       editable: true
     },
-    user_email: {
+    email: {
       type: DataTypes.STRING,
       unique: true,
       allowNull: false,
       editable: true
     },
-    user_phone: {
+    phonenumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
       editable: true
@@ -44,7 +44,7 @@ var User = module.exports = function(sequelize, DataTypes) {
       },
       editable: true
     },
-    question_id1: {
+    question_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -52,31 +52,7 @@ var User = module.exports = function(sequelize, DataTypes) {
         key: 'id'
       }
     },
-    answer1: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    question_id2: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Questions',
-        key: 'id'
-      }
-    },
-    answer2: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    question_id3: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Questions',
-        key: 'id'
-      }
-    },
-    answer3: {
+    answer: {
       type: DataTypes.STRING,
       allowNull: false
     },

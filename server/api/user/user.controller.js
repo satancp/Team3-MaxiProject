@@ -70,7 +70,7 @@ exports.index = function index(req, res) {
 exports.show = function show(req, res) {
   User.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
@@ -85,6 +85,18 @@ exports.create = function create(req, res) {
     .catch(handleError(res));
 }
 
+exports.login = function login(req, res) {
+  User.find({
+    where: {
+      name: req.body.id,
+      password: req.body.password
+    }
+  })
+    .then(handleEntityNotFound(res))
+    .then(responseWithResult(res))
+    .catch(handleError(res));
+}
+
 // Updates an existing User in the DB
 exports.update = function update(req, res) {
   if (req.body._id) {
@@ -92,23 +104,11 @@ exports.update = function update(req, res) {
   }
   User.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(responseWithResult(res))
-    .catch(handleError(res));
-}
-
-// Deletes a User from the DB
-exports.destroy = function destroy(req, res) {
-  User.find({
-    where: {
-      _id: req.params.id
-    }
-  })
-    .then(handleEntityNotFound(res))
-    .then(removeEntity(res))
     .catch(handleError(res));
 }

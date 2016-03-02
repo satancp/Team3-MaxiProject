@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .factory('Question', ['$http', function($http){
+    .factory('Question', ['$http', function($http){
    var api = {
-     getallQuestions : function() {
+     getallQuestion : function() {
           return $http.get('/api/questions/');
      }
   };

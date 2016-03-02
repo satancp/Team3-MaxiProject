@@ -7,10 +7,16 @@ angular.module('maxiProjectApp')
     var data = new Object();
     data.username = $scope.loginForm.username;
     data.password = $scope.loginForm.password;
-    $uibModalInstance.dismiss('ok');
-    ipCookie('LoginUser',1);
-    $location.path('/');
-    $route.reload();
+    User.loginUser(data).success(function (user) {
+      $uibModalInstance.dismiss('ok');
+      $scope.err = undefined;
+      ipCookie('LoginUser',1);
+      ipCookie('Login',user);
+      $location.path('/');
+      $route.reload();
+    }).error(function(err){
+      alert("Username/Password is invalid!");
+    });
   };
   $scope.cancel = function () {
   	$uibModalInstance.dismiss('cancel');

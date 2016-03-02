@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    locaiton_range: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       editable: true

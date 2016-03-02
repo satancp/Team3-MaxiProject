@@ -124,6 +124,16 @@
   top:50px;
 }
 
+#profile {
+  position: relative;
+  left:570px;
+  top:15px;
+  background-color: #fff;
+  font-size: 12px;
+  font-family: Arial;
+  color:#000;
+  text-align: left;
+}
 #display select {
   position: relative;
   left:-370px;

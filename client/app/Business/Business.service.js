@@ -5,6 +5,9 @@ angular.module('maxiProjectApp')
    var api = {
      getallBusiness : function() {
           return $http.get('/api/businesss/');
+     },
+     getBusiness : function(id) {
+          return $http.get('/api/businesss/'+id);
      }
   };
   return api;

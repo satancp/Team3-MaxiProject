@@ -70,7 +70,7 @@ exports.index = function index(req, res) {
 exports.show = function show(req, res) {
   Business.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
@@ -87,12 +87,12 @@ exports.create = function create(req, res) {
 
 // Updates an existing Business in the DB
 exports.update = function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
+  if (req.body.id) {
+    delete req.body.id;
   }
   Business.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
@@ -105,7 +105,7 @@ exports.update = function update(req, res) {
 exports.destroy = function destroy(req, res) {
   Business.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))

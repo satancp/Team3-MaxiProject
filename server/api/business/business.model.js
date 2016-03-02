@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    business_name: {
+    name: {
     type: DataTypes.STRING,
     allowNull: false,
     editable: true

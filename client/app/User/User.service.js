@@ -6,14 +6,11 @@ angular.module('maxiProjectApp')
      getUsers : function() {
           return $http.get('/api/users');
      },
-     getallBusiness : function() {
-          return $http.get('/api/users/businesses/');
-     },
-     getallQuestions : function() {
-          return $http.get('/api/users/questions/');
-     },
      getUser : function(id) {
           return $http.get('/api/users/'+id);
+     },
+     loginUser : function(user) {
+          return $http.post('/api/users/login',user);
      },
      addUser : function(user) {
           return $http.post('/api/users',user);
@@ -23,9 +20,6 @@ angular.module('maxiProjectApp')
      },
      checkUser : function(query) {
           return $http.get('/api/solvequerys?api='+query.api+'&type='+query.type+'&content='+query.content+'&auth='+query.auth);
-     },
-     loginUser : function(user) {
-          return $http.post('/api/users/login/',user);
      }
   };
   return api;
