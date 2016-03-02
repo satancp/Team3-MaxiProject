@@ -6,11 +6,11 @@ module.exports = {
 
   // Sequelize connecton opions
   sequelize: {
-    database: 'maxiproject',
-    username: 'root',
-    password: 'wsxjw113',
+    database: 'heroku_bca1b707fca7342',
+    username: 'b5fe6333c033ca',
+    password: '4fdd79a4',
     options: {
-      host: 'localhost',
+      host: 'us-cdbr-iron-east-03.cleardb.net',
       port: 3306,
       dialect: 'mysql',
       pool: {

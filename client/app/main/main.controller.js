@@ -51,14 +51,22 @@ angular.module('maxiProjectApp')
   		$scope.currentIndex = 2;
   		$scope.slides = 
   		[
-  			{image: 'http://lorempixel.com/600/300',
-      		 text: 'Nice image',
-      		 link: 'http://www.google.co.uk',
-      		 id: 0},
-      		 {image: 'http://lorempixel.com/500/300',
-      		 text: 'Awesome photograph',
-      		 link: 'http://www.baidu.com',
-      		 id: 1}
+  			{image: '../../assets/images/1.jpg',
+      	text: 'Nice image',
+      	link: 'http://www.google.co.uk',
+      	id: 0},
+      	{image: '../../assets/images/2.jpg',
+      	text: 'Awesome photograph',
+      	link: 'http://www.baidu.com',
+      	id: 1},
+        {image: '../../assets/images/3.jpg',
+        text: 'Awesome photograph',
+        link: 'http://www.baidu.com',
+        id: 2},
+        {image: '../../assets/images/4.jpg',
+        text: 'Awesome photograph',
+        link: 'http://www.baidu.com',
+        id: 3}
       	];
       	function generateIndexesArray() {
     		var indexes = [];
