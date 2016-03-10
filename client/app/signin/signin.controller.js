@@ -26,7 +26,15 @@ angular.module('maxiProjectApp')
       animation: $scope.animationsEnabled,
       templateUrl: 'app/signup/signup.html',
       controller: 'SignupCtrl',
-      size: '',
+      size: ''
+    });
+  };
+  $scope.reset = function () {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'app/resetpassword/resetpassword.html',
+      controller: 'ResetpasswordCtrl',
+      size: 'sm'
     });
   };
 });
