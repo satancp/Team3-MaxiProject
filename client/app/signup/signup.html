@@ -5,7 +5,7 @@
     			<label for="name">Username</label>
     			<input type="name" name="name" id="name" ng-model="registrationForm.name" required="required" class="form-control" min="3" max="10">
   				<span ng-show="form.name.$error.required">Please input username!</span>
-  				<span ng-show="form.name.$error.length.min || form.name.$error.length.max">Length of username is invalid!(Should be 3-10)</span>
+  				<span ng-show="form.name.$error.length.min || form.name.$error.length.max">Length of username is invalid!(Must be 3-10 characters)</span>
   			</div>
   			<div class="form-group">
     			<label for="email">Email</label>
@@ -17,12 +17,12 @@
 			<div class="form-group">
     			<label for="password">Password</label>
     			<input type="password" name="password" id="password" ng-model="registrationForm.password" required="required" class="form-control" min="7">
-  				<span ng-show="form.password.$error.length.min">Length of password is too short!(At least 7)</span>
+  				<span ng-show="form.password.$error.length.min">Length of password is too short!(Must be at least 7 characters)</span>
   			</div>
 			<div class="form-group">
     			<label for="password_confirmation">Password confirmation</label>
     			<input type="password" name="password_confirmation" id="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" data-password-verify="registrationForm.password">
-  				<span ng-show="form.password_confirmation.$error.passwordVerify">Password is not correct!</span>
+  				<span ng-show="form.password_confirmation.$error.passwordVerify">Passwords do not match!</span>
   			</div>
   			<div class="form-group">
     			<label for="company">Company</label>
