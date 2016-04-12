@@ -12,6 +12,10 @@ angular.module('maxiProjectApp')
         $location.path('/informationdisplay');
         $route.reload();
   		};
+      $scope.request = function() {
+        $location.path('/requestedview');
+        $route.reload();
+      }
   		$scope.status1 = {
     		isopen: false
   		};

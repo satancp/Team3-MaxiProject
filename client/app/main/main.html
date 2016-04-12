@@ -1,11 +1,11 @@
 <navbar>
 </navbar>
 <div id="dynamicbutton">
-  <button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">
+  <button type="button" class="btn btn-default">
     Find a product
   </button>
   <br>
-  <div id="visible" uib-collapse="isCollapsed">
+  <div id="visible">
     <select type="business" name="business" id="business" ng-model="searchForm.business" required="required" class="form-control" ng-options="b.text for b in bs">
     <option value="">--choose business--</option>
     </select>
@@ -18,7 +18,7 @@
     <button id="get" type="button" class="btn btn-primary" ng-click="get()">
       Get
     </button>
-    <button type="button" class="btn btn-primary" href="/requestedview">
+    <button type="button" class="btn btn-primary" ng-click="request()">
       Request Page
     </button>
   </div>
