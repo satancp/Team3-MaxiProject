@@ -1,18 +1,52 @@
 <navbar>
 </navbar>
 <div id="profile">
-		
-			Name: {{info.name}}
-      <br/>
-      Email: {{info.email}}
-      <br/>
-      Business: {{bs}}
-      <br/>
-      Company: {{info.company}}
-      <br/>
-      Phone number: {{info.phonenumber}}
-      <br/>
-    
+      <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                  <div class="row">
+                        <div class="col-md-5">
+                              <label>Name: </label>
+                        </div>
+                        <div class="col-md-7">
+                              {{info.name}}
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-md-5">
+                              <label>Email: </label>
+                        </div>
+                        <div class="col-md-7">
+                              {{info.email}}
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-md-5">
+                              <label>Business: </label>
+                        </div>
+                        <div class="col-md-7">
+                              {{bs}}
+                        </div>
+                  </div>
+		      <div class="row">
+                        <div class="col-md-5">
+                              <label>Company: </label>
+                        </div>
+                        <div class="col-md-7">
+                              {{info.company}}
+                        </div>
+                  </div>
+	            <div class="row">
+                        <div class="col-md-5">
+                              <label>Phone Number: </label>
+                        </div>
+                        <div class="col-md-7">
+                              {{info.phonenumber}}
+                        </div>
+                  </div>
+            </div>
+            <br><br><br>
+            <hr>
+      </div>   
 </div>
 <footer>
 </footer>
