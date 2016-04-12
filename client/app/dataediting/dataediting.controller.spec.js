@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: MaterialpostCtrl', function () {
+describe('Component: DataeditingComponent', function () {
 
   // load the controller's module
   beforeEach(module('maxiProjectApp'));
 
-  var MaterialpostCtrl, scope;
+  var DataeditingComponent, scope;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($componentController, $rootScope) {
     scope = $rootScope.$new();
-    MaterialpostCtrl = $controller('MaterialpostCtrl', {
+    DataeditingComponent = $componentController('DataeditingComponent', {
       $scope: scope
     });
   }));

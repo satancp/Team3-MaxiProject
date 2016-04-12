@@ -234,6 +234,34 @@
     clear: both;
 }
 
+#postbox {
+  margin-top: 7%;
+  width: 70%;
+  height: 60%;
+  position: absolute;
+  left: 15%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+}
+
+#postTitle h3 {
+  text-align: center;
+}
+
+#post {
+  position: absolute;
+  right: 10%;
+}
+
+#duedate pre{
+  width: 75%;
+  background-color: transparent;
+}
+
+#duedate {
+  display: inline;
+}
 
 #footer ul li{
     display: inline;

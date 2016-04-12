@@ -1,0 +1,51 @@
+<navbar>
+</navbar>
+<div id="request">
+    <select type="username" name="username" id="username" ng-model="searchForm.username" required="required" class="form-control" ng-options="u.text for u in un">
+    	<option value="">--choose a user name--</option>
+    </select>
+    <select type="materialname" name="materialname" id="materialname" ng-model="searchForm.materialname" required="required" class="form-control" ng-options="m.text for m in mn">
+    	<option value="">--choose name of a material--</option>
+    </select>
+    <select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
+    	<option value="">--choose category--</option>
+    </select>
+    <select type="postdate" name="postdate" id="postdate" ng-model="searchForm.postdate" ng-options="p.text for p in pd">
+    	<option value="">--choose a post date--</option>
+    </select>
+    <button id="get" type="button" class="btn btn-primary" ng-click="get()">
+      Get
+    </button>
+    <table ng-table="tableParams" class="table table-bodered">
+    <tr ng-repeat="i in $data">
+        <td data-title="'User Name'" sortable="'username'">
+            <a href="#">
+                {{i.username}}
+            </a>
+        </td>
+        <td data-title="'Material Name'" sortable="'name'">
+            <a href="#">
+                {{i.name}}
+            </a>
+        </td>
+        <td data-title="'Material Type'" sortable="'type'">
+            <a href="#">
+                {{i.type}}
+            </a>
+        </td>
+        <td data-title="'Post Date'" sortable="'date'">
+            <a href="#">
+                {{i.date}}
+            </a>
+        </td>    
+    </tr>
+	</table>
+    <hr>
+    <button id="post" type="button" class="btn btn-primary" ng-click="post()">
+        POST ?
+    </button>
+    <hr>
+</div>
+<footer>
+</footer>
+

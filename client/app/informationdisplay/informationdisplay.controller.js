@@ -9,6 +9,10 @@ angular.module('maxiProjectApp')
     	$location.path('/informationdisplay');
         $route.reload();
   	};
+    $scope.post = function() {
+      $location.path('/postpage');
+      $route.reload();
+    };
   	var data = 
   	[
   		{name:"Data1",type:"Fiber"},

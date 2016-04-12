@@ -2,13 +2,13 @@
 </navbar>
 <div id="display">
     <select type="business" name="business" id="business" ng-model="searchForm.business" required="required" class="form-control" ng-options="b.text for b in bs">
-    <option value="">--choose business--</option>
+        <option value="">--choose business--</option>
     </select>
     <select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
-    <option value="">--choose category--</option>
+        <option value="">--choose category--</option>
     </select>
     <select type="market" name="market" id="market" ng-model="searchForm.market" required="required" class="form-control" ng-options="m.text for m in ma">
-    <option value="">--choose market--</option>
+        <option value="">--choose market--</option>
     </select>
     <button id="get" type="button" class="btn btn-primary" ng-click="get()">
       Get
@@ -27,6 +27,11 @@
         </td>
     </tr>
 	</table>
+    <hr>
+    <button id="post" type="button" class="btn btn-primary" ng-click="post()">
+        POST ?
+    </button>
+    <hr>
 </div>
 <footer>
 </footer>
