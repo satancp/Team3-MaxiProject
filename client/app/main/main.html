@@ -12,8 +12,20 @@
           <div class="col-md-4">
             <label><b>Material Search</b></label>
             <ul class="list-group">
+              <p>Prepreg Manufacturer</p>
+              <select ng-model="select1.selected" required="required" class="form-control" ng-options="option.content for option in select1.all track by option.id">
+              </select>
+            </ul>
+            <ul class="list-group">
               <p>Material</p>
-              <select ng-model="select.selected_material" required="required" class="form-control" ng-options="option.type for option in select.all_materials track by option.id">
+              <select ng-model="select2.selected" required="required" class="form-control" ng-options="option.content for option in select2.all track by option.id">
+              </select>
+              <p ng-show="select2.selected.content!='Any'">Type</p>
+              <select ng-show="select2.selected.content=='Fibre'" ng-model="select2.selected_Fibre" required="required" class="form-control" ng-options="option.content for option in select2.all_Fibre track by option.id">
+              </select>
+              <select ng-show="select2.selected.content=='Resin'" ng-model="select2.selected_Resin" required="required" class="form-control" ng-options="option.content for option in select2.all_Resin track by option.id">
+              </select>
+              <select ng-show="select2.selected.content=='Weave'" ng-model="select2.selected_Weave" required="required" class="form-control" ng-options="option.content for option in select2.all_Weave track by option.id">
               </select>
             </ul>
           </div>

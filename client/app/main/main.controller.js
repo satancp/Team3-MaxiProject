@@ -25,14 +25,52 @@ angular.module('maxiProjectApp')
   		$scope.status3 = {
     		isopen: false
   		};
-      $scope.select = {
-        all_materials: [
-          {id:"0",type:"Any"},
-          {id:"1",type:"Fibre"},
-          {id:"2",type:"Resin"},
-          {id:"3",type:"Weave"}
+      $scope.select1 = {
+        all: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"SHD"},
+          {id:"2",content:"Cytec"},
+          {id:"3",content:"Hexcel"},
+          {id:"4",content:"SGL"},
+          {id:"5",content:"Other"}
         ],
-        selected_material: {id:"0",type:"Any"}
+        selected: {id:"0",content:"Any"}
+      };
+      $scope.select2 = {
+        all: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"Fibre"},
+          {id:"2",content:"Resin"},
+          {id:"3",content:"Weave"}
+        ],
+        selected: {id:"0",content:"Any"},
+        all_Fibre: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"Carbon"},
+          {id:"2",content:"Glass"},
+          {id:"3",content:"Kevlar"},
+          {id:"4",content:"Other"}
+        ],
+        selected_Fibre: {id:"0",content:"Any"},
+        all_Resin: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"Epoxy"},
+          {id:"2",content:"Phenolic"},
+          {id:"3",content:"Bismaleimide"},
+          {id:"4",content:"Other"}
+        ],
+        selected_Resin: {id:"0",content:"Any"},
+        all_Weave: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"UD"},
+          {id:"2",content:"Plain"},
+          {id:"3",content:"Twill"},
+          {id:"4",content:"Satin"},
+          {id:"5",content:"Basket"},
+          {id:"6",content:"Leno"},
+          {id:"7",content:"Other"}
+        ],
+        selected_Weave: {id:"0",content:"Any"}
       };
       $scope.allnews = 
   		[
