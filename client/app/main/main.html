@@ -1,54 +1,34 @@
 <navbar>
 </navbar>
-<div id="dynamicbutton">
-  <button type="button" class="btn btn-default">
-    Find a product
-  </button>
+<div id="mainpage">
   <br>
-  <div id="visible">
-    <select type="business" name="business" id="business" ng-model="searchForm.business" required="required" class="form-control" ng-options="b.text for b in bs">
-    <option value="">--choose business--</option>
-    </select>
-    <select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
-    <option value="">--choose category--</option>
-    </select>
-    <select type="market" name="market" id="market" ng-model="searchForm.market" required="required" class="form-control" ng-options="m.text for m in ma">
-    <option value="">--choose market--</option>
-    </select>
-    <button id="get" type="button" class="btn btn-primary" ng-click="get()">
-      Get
-    </button>
-    <button type="button" class="btn btn-primary" ng-click="request()">
-      Request Page
-    </button>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+        <ol class="breadcrumb" id="route">
+          <li><a href="#">Home</a></li>
+        </ol>
+        <div class="row">
+          <div class="col-md-4">
+            <label><b>Material Search</b></label>
+            <ul class="list-group">
+              <p>Material</p>
+              <select ng-model="select.selected_material" required="required" class="form-control" ng-options="option.type for option in select.all_materials track by option.id">
+              </select>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label><b>NEWS</b></label>
+            <br>
+            <a class="twitter-timeline" href="https://twitter.com/InSheffiel" data-widget-id="722185080555356160">Tweets by @InSheffiel</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+        </div>
+      </div>
+    </div> 
   </div>
-</div>
-<div id="imageside">
-	<div style="height: 300px;width: 800px">
-    <uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-      	<a href="{{slide.link}}">
-        	<img ng-src="{{slide.image}}" style="margin:auto;"/>
-        		<div class="carousel-caption">
-          		<p>
-          			{{slide.text}}
-          		</p>
-       			</div>
-       	</a>
-      </uib-slide>
-    </uib-carousel>
-  </div>
-</div>
-<div>
-	<ul ng-repeat="news in allnews">
-		<div id="news">
-			{{news.date}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <br/>
-			<a href="/news/{{news.id}}">
-			  {{news.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			</a>
-    </div>
-	</ul>
 </div>
 <footer>
 </footer>

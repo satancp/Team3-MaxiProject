@@ -2,13 +2,7 @@
 
 class FooterController {
   //start-non-standard
-  menu = [{
-    'title': 'News',
-    'link': '/'
-  }, {
-    'title': 'Contact Us',
-    'link': '/contact'
-  }];
+  
 
   //end-non-standard
 }

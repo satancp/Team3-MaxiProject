@@ -2,17 +2,6 @@
 
 class NavbarController {
   //start-non-standard
-  menu = [{
-    'title': 'Home',
-    'link': '/'
-  }, {
-    'title': 'News',
-    'link': '/'
-  }, {
-    'title': 'Contact Us',
-    'link': '/contact'
-  }];
-
   //end-non-standard
 
   constructor($scope,$location,ipCookie,$route,$uibModal) {
@@ -21,11 +10,9 @@ class NavbarController {
     $scope.logout = function () {
       ipCookie.remove('LoginUser');
       $scope.state_cookie = ipCookie('LoginUser');
-      $location.path('/');
       $route.reload();
     };
-    $scope.format = "h:mm:ss a";
-    $scope.date = new Date();
+    
     $scope.search = function () {
       alert($scope.keywords);
     };

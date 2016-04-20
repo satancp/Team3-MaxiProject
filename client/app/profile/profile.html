@@ -4,43 +4,49 @@
       <div class="row">
             <div class="col-md-10 col-md-offset-1">
                   <div class="row">
-                        <div class="col-md-5">
-                              <label>Name: </label>
+                        <ol class="breadcrumb" id="route">
+                              <li><a href="/main">Home</a></li>
+                              <li><a href="#" class="active">Profile</a></li>
+                        </ol>
+                        <div class="row">
+                              <div class="col-md-5">
+                                    <label>Name: </label>
+                              </div>
+                              <div class="col-md-7">
+                                    {{info.name}}
+                              </div>
                         </div>
-                        <div class="col-md-7">
-                              {{info.name}}
+                        <div class="row">
+                              <div class="col-md-5">
+                                    <label>Email: </label>
+                              </div>
+                              <div class="col-md-7">
+                                    {{info.email}}
+                              </div>
                         </div>
-                  </div>
-                  <div class="row">
-                        <div class="col-md-5">
-                              <label>Email: </label>
+                        <div class="row">
+                              <div class="col-md-5">
+                                    <label>Business: </label>
+                              </div>
+                              <div class="col-md-7">
+                                    {{bs}}
+                              </div>
                         </div>
-                        <div class="col-md-7">
-                              {{info.email}}
+      		      <div class="row">
+                              <div class="col-md-5">
+                                    <label>Company: </label>
+                              </div>
+                              <div class="col-md-7">
+                                    {{info.company}}
+                              </div>
                         </div>
-                  </div>
-                  <div class="row">
-                        <div class="col-md-5">
-                              <label>Business: </label>
-                        </div>
-                        <div class="col-md-7">
-                              {{bs}}
-                        </div>
-                  </div>
-		      <div class="row">
-                        <div class="col-md-5">
-                              <label>Company: </label>
-                        </div>
-                        <div class="col-md-7">
-                              {{info.company}}
-                        </div>
-                  </div>
-	            <div class="row">
-                        <div class="col-md-5">
-                              <label>Phone Number: </label>
-                        </div>
-                        <div class="col-md-7">
-                              {{info.phonenumber}}
+      	            <div class="row">
+                              <div class="col-md-5">
+                                    <label>Phone Number: </label>
+                              </div>
+                              <div class="col-md-7">
+                                    {{info.phonenumber}}
+                              </div>
                         </div>
                   </div>
             </div>

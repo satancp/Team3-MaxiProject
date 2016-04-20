@@ -25,7 +25,16 @@ angular.module('maxiProjectApp')
   		$scope.status3 = {
     		isopen: false
   		};
-  		$scope.allnews = 
+      $scope.select = {
+        all_materials: [
+          {id:"0",type:"Any"},
+          {id:"1",type:"Fibre"},
+          {id:"2",type:"Resin"},
+          {id:"3",type:"Weave"}
+        ],
+        selected_material: {id:"0",type:"Any"}
+      };
+      $scope.allnews = 
   		[
   			{date:"1992.05.08",
          title:"Hello this is a demo",
@@ -48,49 +57,6 @@ angular.module('maxiProjectApp')
          content:"The contents",
          id:4}
   		];
-  		$scope.date = new Date();
-  		$scope.myInterval = 5000;
-  		$scope.noWrapSlides = false;
-  		$scope.active = 0;
-  		$scope.currentIndex = 2;
-  		$scope.slides = 
-  		[
-  			{image: '../../assets/images/1.jpg',
-      	text: 'Nice image',
-      	link: 'http://www.google.co.uk',
-      	id: 0},
-      	{image: '../../assets/images/2.jpg',
-      	text: 'Awesome photograph',
-      	link: 'http://www.baidu.com',
-      	id: 1},
-        {image: '../../assets/images/3.jpg',
-        text: 'Awesome photograph',
-        link: 'http://www.baidu.com',
-        id: 2},
-        {image: '../../assets/images/4.jpg',
-        text: 'Awesome photograph',
-        link: 'http://www.baidu.com',
-        id: 3}
-      	];
-      	function generateIndexesArray() {
-    		var indexes = [];
-    		for (var i = 0; i < currentIndex; ++i) {
-      			indexes[i] = i;
-    		}
-    		return shuffle(indexes);
-  		}
-		function shuffle(array) {
-    		var tmp, current, top = array.length;
-			if (top) {
-      			while (--top) {
-        			current = Math.floor(Math.random() * (top + 1));
-        			tmp = array[current];
-        			array[current] = array[top];
-        			array[top] = tmp;
-      			}
-    		}
-    		return array;
-  		}
   	//});
 //});
 });

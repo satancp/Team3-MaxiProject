@@ -1,101 +1,109 @@
 <navbar>
 </navbar>
 <div id="postbox">
-	<form name="outerForm">
-		<div class="row">
-			<div class="title" id="postTitle">
-				<h3>POST PART</h3>
+	<br>
+	<div class="row">
+		<form name="outerForm">
+			<div class="row">
+				<div class="title" id="postTitle">
+					<h3>POST PART</h3>
+				</div>
 			</div>
-		</div>
-		<hr>
-		<div class="row">
-			<div class="col-sm-10 col-sm-offset-1">
-				<uib-tabset active="activeJustified" justified="true">
-					<uib-tab index="0" heading="Post Material">
-						<ng-form name="nestedForm">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Material Name</label>
-										<select type="materialname" name="materialname" id="materialname" ng-model="searchForm.materialname" required="required" class="form-control" ng-options="m.text for m in mn">
-				    						<option value="">--choose name of a material--</option>
-				    					</select>
+			<hr>
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<uib-tabset active="activeJustified" justified="true">
+						<uib-tab index="0" heading="Post Material">
+							<ng-form name="nestedForm">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Material Name</label>
+											<select type="materialname" name="materialname" id="materialname" ng-model="searchForm.materialname" required="required" class="form-control" ng-options="m.text for m in mn">
+					    						<option value="">--choose name of a material--</option>
+					    					</select>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Material Category</label>
+											<select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
+	    										<option value="">--choose category--</option>
+	    									</select>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Weight</label>
+											<input class="form-control" type="text" ng-model="model.weight">
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<label>Location</label>
+											<select type="location" name="location" id="location" ng-model="searchForm.location" required="required" class="form-control" ng-options="l.text for l in lo">
+	    										<option value="">--choose a location--</option>
+	    									</select>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Material Category</label>
-										<select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
-    										<option value="">--choose category--</option>
-    									</select>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="input-group" id="duedate">
+											<p class="input-group">
+												<label>Due Date</label>
+									          	<input type="text" class="form-control" uib-datepicker-popup="{{'dd-MMMM-yyyy'}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+									          	<span class="input-group-btn">
+									            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+									          </span>
+									        </p>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Application Area</label>
+											<select type="area" name="area" id="area" ng-model="searchForm.area" required="required" class="form-control" ng-options="a.text for a in ar">
+	    										<option value="">--choose category--</option>
+	    									</select>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Weight in GSM (g/m<sup>2</sup>)</label>
-										<input class="form-control" type="text" ng-model="model.weight">
+							</ng-form>
+						</uib-tab>
+						<uib-tab index="1" heading="Post Request">
+							<ng-form name="nestedForm">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Material Name</label>
+											<select type="materialname" name="materialname" id="materialname" ng-model="searchForm.materialname" required="required" class="form-control" ng-options="m.text for m in mn">
+					    						<option value="">--choose name of a material--</option>
+					    					</select>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Material Category</label>
+											<select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
+	    										<option value="">--choose category--</option>
+	    									</select>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<label>Location</label>
-										<select type="location" name="location" id="location" ng-model="searchForm.location" required="required" class="form-control" ng-options="l.text for l in lo">
-    										<option value="">--choose a location--</option>
-    									</select>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group" id="duedate">
-										<label>Due Date</label>
-          								<pre>{{dt | date:'fullDate'}}</pre>
-            							<a uib-datepicker-popup ng-model="dt" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" ng-click="open()"><i class="fa fa-calendar fa-2x"></i></a>	
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Application Area</label>
-										<select type="area" name="area" id="area" ng-model="searchForm.area" required="required" class="form-control" ng-options="a.text for a in ar">
-    										<option value="">--choose category--</option>
-    									</select>
-									</div>
-								</div>
-							</div>
-						</ng-form>
-					</uib-tab>
-					<uib-tab index="1" heading="Post Request">
-						<ng-form name="nestedForm">
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Material Name</label>
-										<select type="materialname" name="materialname" id="materialname" ng-model="searchForm.materialname" required="required" class="form-control" ng-options="m.text for m in mn">
-				    						<option value="">--choose name of a material--</option>
-				    					</select>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<label>Material Category</label>
-										<select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
-    										<option value="">--choose category--</option>
-    									</select>
-									</div>
-								</div>
-							</div>
-						</ng-form>
-					</uib-tab>
-				</uib-tabset>
-			</div>
-		</div>	
-		<hr>	
-		<div id="post">			
-	    	<button type="button" class="btn btn-info" ng-click="post()">
-	        	POST
-	    	</button>
-	    </div>
-    </form>	
+							</ng-form>
+						</uib-tab>
+					</uib-tabset>
+				</div>
+			</div>	
+			<hr>	
+			<div id="post">			
+		    	<button type="button" class="btn btn-info" ng-click="post()">
+		        	POST
+		    	</button>
+		    </div>
+	    </form>	
+	</div>
+    <br><br><br><br><br>
 </div>
 <footer>
 </footer>

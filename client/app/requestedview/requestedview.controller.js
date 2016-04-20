@@ -31,7 +31,7 @@ angular.module('maxiProjectApp')
   	];
   	$scope.tableParams = new NgTableParams({
       page: 1, 
-      count: data.length * 0.4,  
+      count: data.length * 0.6,  
       filter: {
       	name: ''
       },
@@ -39,7 +39,7 @@ angular.module('maxiProjectApp')
           name: 'asc'  
       }
     }, {total: data.length,
-    	counts: [2,3,4],
+    	 counts: [2,3,4],
         getData: function(params) {
           var orderedData = params.sorting()?$filter('orderBy')(data, params.orderBy()):data;
           params.total(orderedData.length);

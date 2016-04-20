@@ -1,45 +1,30 @@
-<div id="navigation" ng-controller="NavbarController">
-  <ul>
-    <li>
-      <date>
-        {{date | date:'yyyy.MM.dd'}}
-      </date>
+<div id="navigation" role="navigation" ng-controller="NavbarController">
+<div id="background">
+  <img src="/assets/images/bg.jpg" />
+  <div class="container"> 
+    <div class="navbar-header"> 
+      <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar bar1"></span>
+        <span class="icon-bar bar2"></span>
+        <span class="icon-bar bar3"></span>
+      </button>    
+        <a href="#" class="navbar-brand" id="brand">Team-3 LOGO PLACE
+        </a>
+    </div>
+  </div>
+  <div class="nav nav-tabs" id="nav-tabs">
+    <li><a href="/main"><i class="fa fa-home"></i></a></li>
+    <li><a href="/informationdisplay">Materials</a></li>
+    <li><a href="/requestedview">Material Requirement</a></li>
+    <li ng-show="state_cookie==1">
+      <a href="/profile"><i class="fa fa-user"> Your Account</i></a>
     </li>
-    <li>
-      <time time-update="format"/>
+    <li ng-show="!state_cookie" ng-click="login()">
+      <a href="#">Login</a>
     </li>
-    <li ng-repeat="item in nav.menu">
-      <a ng-href="{{item.link}}">
-        {{item.title}}
-      </a>
+    <li ng-show="state_cookie" ng-click="logout()"><a href="#">Logout</a>
     </li>
-    <li uib-dropdown on-toggle="toggled(open)" ng-show="state_cookie==1">
-      <a href id="simple-dropdown" uib-dropdown-toggle>
-        Profile
-      </a>
-      <ul uib-dropdown-menu style="height: 130px;width: 50px" aria-labelledby="simple-dropdown">
-        <li><a href="/profile">Profile</a></li>
-        <li><a href="#">Update</a></li>
-        <li><a href="/informationdisplay">Message List</a></li>
-        <li><a href="/requestedview">Request List</a></li>
-        <li><a href="/postpage">Post New</a></li>
-      </ul>
-    </li>
-    <li>
-      <a ng-show="!state_cookie" ng-click="login()" ng-href="#">
-        Login
-      </a>
-      <a ng-show="state_cookie" ng-click="logout()" ng-href="#">
-        Logout
-      </a>
-    </li>
-    <li>
-      <input type="text" placeholder="any keywords" ng-model="keywords"/>
-    </li>
-    <li> 
-      <button type="submit" class="btn btn-default" ng-click="search()">
-        Search
-      </button>
-    </li>
-  </ul>
+  </div>
+</div>
 </div>

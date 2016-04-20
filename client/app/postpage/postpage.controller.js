@@ -10,7 +10,6 @@ angular.module('maxiProjectApp')
       $location.path('/main');
       $route.reload();
     }
-    $scope.dt = new Date();
 
     $scope.clear = function() {
     	$scope.dt = null;
@@ -45,12 +44,12 @@ angular.module('maxiProjectApp')
     	return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
   	}
 
-  	$scope.open = function() {
+  	$scope.open1 = function() {
       $scope.dt = new Date();
   		$scope.popup.opened = true;
   	};
 
-  	$scope.popup = {opened: false};
+  	$scope.popup1 = {opened: false};
 
     $scope.setDate = function(year, month, day) {
       $scope.dt = new Date(year, month, day);
