@@ -1,0 +1,24 @@
+#materialdetailstab table, #materialdetailstab th, #materialdetailstab td {
+border: 1px solid black;
+border-collapse: collapse;
+  }
+#materialdetailstab th, #materialdetailstab td {
+padding: 5px;
+text-align: left;
+
+}
+
+#materialdetailstab th{
+background-color:#e6f9ff;
+
+}
+
+.tablediv, #contactbtn, .materialimg {
+
+margin-left: 20px;
+}
+
+
+#contactbtn {
+
+}
