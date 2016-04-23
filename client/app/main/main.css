@@ -1,1 +1,40 @@
+#mainpage label {
+  position: relative;
+  text-decoration: underline;
+  font-size: 2em;
+  font-family: Comic;
+  letter-spacing: 2px;
+  color: black;
+}
 
+#mainpage ul li {
+  list-style-position: inside;
+  font-size: 1em;
+  margin-top: 5px;
+  color: gray;
+}
+
+#mainpage ul li a {
+  font-size: 1.3em;
+  color: gray;
+  letter-spacing: 1px;
+}
+
+#mainpage input {
+  width: 80%;
+}
+
+#mainpage button {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+#mainpage iframe {
+  width: 90%;
+  height: 60%;
+}
+
+#get {
+  position: absolute;
+  right: 5%;
+}

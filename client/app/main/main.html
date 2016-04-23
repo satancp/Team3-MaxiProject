@@ -9,18 +9,18 @@
           <li><a href="#">Home</a></li>
         </ol>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-5">
             <label><b>Material Search</b></label>
             <ul class="list-group">
-              <p>Prepreg Manufacturer</p>
+              <p>Prepreg Manufacturer:</p>
               <select ng-model="select1.selected" required="required" class="form-control" ng-options="option.content for option in select1.all track by option.id">
               </select>
             </ul>
             <ul class="list-group">
-              <p>Material</p>
+              <p>Material:</p>
               <select ng-model="select2.selected" required="required" class="form-control" ng-options="option.content for option in select2.all track by option.id">
               </select>
-              <p ng-show="select2.selected.content!='Any'">Type</p>
+              <p ng-show="select2.selected.content!='Any'"><br>Type:</p>
               <select ng-show="select2.selected.content=='Fibre'" ng-model="select2.selected_Fibre" required="required" class="form-control" ng-options="option.content for option in select2.all_Fibre track by option.id">
               </select>
               <select ng-show="select2.selected.content=='Resin'" ng-model="select2.selected_Resin" required="required" class="form-control" ng-options="option.content for option in select2.all_Resin track by option.id">
@@ -29,10 +29,8 @@
               </select>
             </ul>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <label><b>NEWS</b></label>
+          <div class="col-md-5 col-md-offset-1">
+            <label><em>NEWS</em></label>
             <br>
             <a class="twitter-timeline" href="https://twitter.com/InSheffiel" data-widget-id="722185080555356160">Tweets by @InSheffiel</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

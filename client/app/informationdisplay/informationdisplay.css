@@ -1,0 +1,40 @@
+.ng-table-counts {
+  position: relative;
+  left:0px;
+  top:0px;
+}
+
+.ng-table-pager {
+  position: relative;
+  left:60%;
+  top:20px;
+}
+
+#visible select {
+  position: relative;
+  left:-945px;
+  top:20px;
+  height:22px;
+  width:15%;
+  float: right;
+  background-color: #fff;
+  padding: .1em 1em;
+  font-size: 12px;
+  font-family: Arial;
+  color:#000;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#visible button {
+  position: relative;
+  left:335px;
+  top:20px;
+  background-color: #fff;
+  padding: .1em 1em;
+  font-size: 12px;
+  font-family: Arial;
+  color:#000;
+  text-align: center;
+  border-radius: 5px;
+}

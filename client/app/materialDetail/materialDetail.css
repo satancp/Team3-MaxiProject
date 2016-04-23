@@ -1,24 +1,38 @@
-#materialdetailstab table, #materialdetailstab th, #materialdetailstab td {
-border: 1px solid black;
-border-collapse: collapse;
-  }
-#materialdetailstab th, #materialdetailstab td {
-padding: 5px;
-text-align: left;
-
+.details {
+	margin-bottom: 20%;
 }
 
-#materialdetailstab th{
-background-color:#e6f9ff;
-
+.details img {
+	margin-left: 15%;
+	height: 90%;
+	width: 85%;
 }
 
-.tablediv, #contactbtn, .materialimg {
+.details .name {
+	text-align: right;
+	font-family: Comic;
+	font-size: 1.1em;
+	margin-bottom: 1.5%;
+}
 
-margin-left: 20px;
+.details .param {
+	text-align: left;
+	font-family: Comic;
+	font-size: 1.1em;
+	margin-bottom: 1.5%;
+}
+
+.details a {
+	color: dimgray;
+	font-size: 1.5em;
+}
+
+.details h3 {
+	text-align: center;
+	font-family: Comic;
+	font-weight: bold;
+	font-size: 2.3em;
+	margin-bottom: 2%;
 }
 
 
-#contactbtn {
-
-}

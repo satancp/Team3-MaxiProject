@@ -1,0 +1,30 @@
+#postbox {
+  margin-top: 7%;
+  width: 70%;
+  height: 60%;
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  bottom: 20%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 20px;
+  padding-bottom: 30px;
+}
+
+#postTitle h3 {
+  text-align: center;
+}
+
+#post {
+  position: absolute;
+  right: 10%;
+}
+
+#duedate p span button{
+  margin-top: 25px;
+}
+
+#duedate {
+  display: inline;
+}
