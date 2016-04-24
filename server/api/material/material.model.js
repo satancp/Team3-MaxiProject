@@ -19,8 +19,21 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       editable: true
     },
-    application: {
+    manufacturer: {
       type: DataTypes.STRING,
+      allowNull: false,
+      editable: true
+    },
+    poster_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id'
+      }
+    },
+    stock_state: {
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       editable: true
     }

@@ -35,15 +35,6 @@ var User = module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       editable: true
     },
-    business_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'Businesses',
-        key: 'id'
-      },
-      editable: true
-    },
     question_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
