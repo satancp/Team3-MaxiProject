@@ -26,7 +26,7 @@ var User = module.exports = function(sequelize, DataTypes) {
       editable: true
     },
     phonenumber: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       editable: true
     },
@@ -47,7 +47,7 @@ var User = module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    power: DataTypes.BOOLEAN
+    power: DataTypes.INTEGER
   });
 }
 

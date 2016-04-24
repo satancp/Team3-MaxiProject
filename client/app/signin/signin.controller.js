@@ -29,12 +29,4 @@ angular.module('maxiProjectApp')
       size: ''
     });
   };
-  $scope.reset = function () {
-    var modalInstance = $uibModal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'app/resetpassword/resetpassword.html',
-      controller: 'ResetpasswordCtrl',
-      size: 'sm'
-    });
-  };
 });

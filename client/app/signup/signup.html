@@ -29,13 +29,6 @@
     			<input type="company" name="company" id="company" ng-model="registrationForm.company" required="required" class="form-control">
   				<span ng-show="form.company.$error.required">Please input company!</span>
   			</div>
-        <div class="form-group">
-          <label for="business">Business</label>
-          <select type="business" name="business" id="business" ng-model="registrationForm.business" required="required" class="form-control" ng-options="b.name for b in bs track by b.id">
-          <option value="">--choose business--</option>
-          </select>
-          <span ng-show="form.business.$error.required">Please select a business!</span>
-        </div>
   			<div class="form-group">
     			<label for="squestion">Security question</label>
     			<select type="squestion" name="squestion" id="squestion" ng-model="registrationForm.question" required="required" class="form-control" ng-options="sq.question for sq in sqs track by sq.id">

@@ -1,5 +1,5 @@
 angular.module('maxiProjectApp')
-  .controller('MainController', function ($scope, Usernumber, News, ipCookie, $location, $route) {
+  .controller('MainController', function ($scope, ipCookie, $location, $route) {
   	//Usernumber.getNumbers().success(function (numbers) {
   		//News.getLatest().success(function (news) {
   		//$scope.numbers = numbers;

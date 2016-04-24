@@ -1,12 +1,8 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('SignupCtrl', function ($scope, ipCookie, Location, Business, Question, User, $uibModalInstance, $location, $route) {
-  Business.getallBusiness().success(function(bs) {
-    $scope.bs = bs;
-    Location.getallLocation().success(function(la) {
-      $scope.la = la;
-      Question.getallQuestion().success(function(sqs) {
+  .controller('SignupCtrl', function ($scope, ipCookie, Question, User, $uibModalInstance, $location, $route) {
+  Question.getallQuestion().success(function(sqs) {
         $scope.sqs = sqs;
         $scope.handleRegBtnClick = function () {
           var data = new Object();
@@ -14,10 +10,10 @@ angular.module('maxiProjectApp')
           data.email = $scope.registrationForm.email;
           data.password = $scope.registrationForm.password;
           data.company = $scope.registrationForm.company;
-          data.business_id = $scope.registrationForm.business.id;
           data.question_id = $scope.registrationForm.question.id;
           data.answer = $scope.registrationForm.answer;
           data.phonenumber = $scope.registrationForm.phonenumber;
+          data.power = 0;
           User.addUser(data).success(function (added_user) {
             alert("Successfully!Enjoy~");
             $uibModalInstance.dismiss('ok');
@@ -34,6 +30,4 @@ angular.module('maxiProjectApp')
           $uibModalInstance.dismiss('cancel');
         };
       });
-    });
-  });
 });

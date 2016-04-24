@@ -5,40 +5,52 @@
 
 'use strict';
 var sqldb = require('../sqldb');
-// var Thing = sqldb.Thing;
+// var Question = sqldb.Question;
+// var User = sqldb.User;
 
-// Thing.sync()
+// Question.sync()
+//   .then(() => Question.destroy({where:{}}))
 //   .then(() => {
-//     return Thing.destroy({ where: {} });
-//   })
+//     Question.bulkCreate([
+//     {	
+//       id:1,
+//       question: 'Which place were you born?'
+//     },
+//     {	
+//       id:2,
+//       question: 'What is the name of your mother?'
+//     },
+//     {
+//       id:3,
+//       question: 'Which film do you like most?'
+//     }]);
+//   });
+
+// User.sync()
+//   .then(() => User.destroy({where:{}}))
 //   .then(() => {
-//     Thing.bulkCreate([{
-//       name: 'Development Tools',
-//       info: 'Integration with popular tools such as Bower, Grunt, Babel, Karma, ' +
-//              'Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, ' +
-//              'Stylus, Sass, and Less.'
-//     }, {
-//       name: 'Server and Client integration',
-//       info: 'Built with a powerful and fun stack: MongoDB, Express, ' +
-//              'AngularJS, and Node.'
-//     }, {
-//       name: 'Smart Build System',
-//       info: 'Build system ignores `spec` files, allowing you to keep ' +
-//              'tests alongside code. Automatic injection of scripts and ' +
-//              'styles into your index.html'
-//     }, {
-//       name: 'Modular Structure',
-//       info: 'Best practice client and server structures allow for more ' +
-//              'code reusability and maximum scalability'
-//     }, {
-//       name: 'Optimized Build',
-//       info: 'Build process packs up your templates as a single JavaScript ' +
-//              'payload, minifies your scripts/css/images, and rewrites asset ' +
-//              'names for caching.'
-//     }, {
-//       name: 'Deployment Ready',
-//       info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
-//              'and openshift subgenerators'
+//     User.bulkCreate([
+//     {
+//       id:1,
+//       name: 'Top_admin',
+//       password: 'admin',
+//       email: 'zx603852402@gmail.com',
+//       phonenumber: '07821430609',
+//       company: 'University of Sheffield',
+//       question_id:1,
+//       answer: 'Sheffield',
+//       power:1
+//     },
+//     {
+//       id:2,
+//       name: 'Second_admin',
+//       password: 'admin',
+//       email: 'zx603852402@vip.qq.com',
+//       phonenumber: '07821430609',
+//       company: 'University of Sheffield',
+//       question_id:1,
+//       answer: 'Sheffield',
+//       power:1
 //     }]);
 //   });
 

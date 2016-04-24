@@ -88,7 +88,7 @@ exports.create = function create(req, res) {
 exports.login = function login(req, res) {
   User.find({
     where: {
-      name: req.body.id,
+      name: req.body.username,
       password: req.body.password
     }
   })

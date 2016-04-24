@@ -14,8 +14,8 @@ var db = {
 };
 
 // Insert models below
-db.Material = db.sequelize.import('../api/material/material.model');
 db.Question = db.sequelize.import('../api/question/question.model');
 db.User = db.sequelize.import('../api/user/user.model');
+db.Material = db.sequelize.import('../api/material/material.model');
 
 module.exports = db;
