@@ -9,11 +9,6 @@ var Material = module.exports = function(sequelize, DataTypes) {
       autoIncrement: true,
       editable: false
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      editable: true
-    },
     manufacturer: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -72,7 +67,7 @@ var Material = module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       editable: true
     },
-    qunantity: {
+    quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
       editable: true

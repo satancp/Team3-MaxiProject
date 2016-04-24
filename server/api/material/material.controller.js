@@ -70,7 +70,7 @@ export function index(req, res) {
 export function show(req, res) {
   Material.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
