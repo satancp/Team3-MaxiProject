@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('MaterialDetailCtrl', function ($scope,ipCookie,Material,User,$routeParams) {
+  .controller('MaterialDetailCtrl', function ($scope,ipCookie,Material,User,$routeParams,$window) {
     Material.getMaterial($routeParams.id).success(function(ms) {
         $scope.ms = ms;
         $scope.email = function() {
@@ -9,7 +9,7 @@ angular.module('maxiProjectApp')
     		  $scope.info = ipCookie('Login');
                User.getUser(ms.poster_id).success(function(userinfo){
                 $scope.userinfo = userinfo;
-                $location.path("mailto:" + userinfo.email);
+                $window.location = "mailto:" + userinfo.email;
               });		  
     	   }
     	   else {
