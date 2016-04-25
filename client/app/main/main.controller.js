@@ -1,30 +1,28 @@
 angular.module('maxiProjectApp')
-  .controller('MainController', function ($scope, ipCookie, $location, $route) {
-  	//Usernumber.getNumbers().success(function (numbers) {
-  		//News.getLatest().success(function (news) {
-  		//$scope.numbers = numbers;
-  		//$scope.allnews = news;
-      $scope.bs = [{text:"This is a business"}];
-      $scope.ca = [{text:"This is a category"}];
-      $scope.ma = [{text:"This is a market"}];
-  		$scope.isCollapsed = true;
-  		$scope.get = function() {
-        $location.path('/informationdisplay');
+  .controller('MainController', function ($scope, ipCookie, $location, $route, Material) {
+    Material.getallMaterial().success(function(data) {
+      $scope.data = data;
+      $scope.listall = function() {
+        $location.path('/informationdisplay/list/all');
         $route.reload();
-  		};
+      }
+      $scope.search = function() {
+        $location.path('/informationdisplay/search/');
+        $route.reload();
+      }
       $scope.request = function() {
         $location.path('/requestedview');
         $route.reload();
       }
-  		$scope.status1 = {
-    		isopen: false
-  		};
-  		$scope.status2 = {
-    		isopen: false
-  		};
-  		$scope.status3 = {
-    		isopen: false
-  		};
+      $scope.status1 = {
+        isopen: false
+      };
+      $scope.status2 = {
+        isopen: false
+      };
+      $scope.status3 = {
+        isopen: false
+      };
       $scope.select1 = {
         all: [
           {id:"0",content:"Any"},
@@ -37,13 +35,6 @@ angular.module('maxiProjectApp')
         selected: {id:"0",content:"Any"}
       };
       $scope.select2 = {
-        all: [
-          {id:"0",content:"Any"},
-          {id:"1",content:"Fibre"},
-          {id:"2",content:"Resin"},
-          {id:"3",content:"Weave"}
-        ],
-        selected: {id:"0",content:"Any"},
         all_Fibre: [
           {id:"0",content:"Any"},
           {id:"1",content:"Carbon"},
@@ -52,6 +43,8 @@ angular.module('maxiProjectApp')
           {id:"4",content:"Other"}
         ],
         selected_Fibre: {id:"0",content:"Any"},
+        all_Fibre_code: [],
+        selected_Fibre_code: "Any",
         all_Resin: [
           {id:"0",content:"Any"},
           {id:"1",content:"Epoxy"},
@@ -60,6 +53,8 @@ angular.module('maxiProjectApp')
           {id:"4",content:"Other"}
         ],
         selected_Resin: {id:"0",content:"Any"},
+        all_Resin_code: [],
+        selected_Resin_code: "Any",
         all_Weave: [
           {id:"0",content:"Any"},
           {id:"1",content:"UD"},
@@ -70,11 +65,42 @@ angular.module('maxiProjectApp')
           {id:"6",content:"Leno"},
           {id:"7",content:"Other"}
         ],
-        selected_Weave: {id:"0",content:"Any"}
+        selected_Weave: {id:"0",content:"Any"},
+        all_Weave_code: [
+          {id:"0",content:"Any"},
+          {id:"1",content:"UD"},
+          {id:"2",content:"Plain"},
+          {id:"3",content:"Twill"},
+          {id:"4",content:"Satin"},
+          {id:"5",content:"Basket"},
+          {id:"6",content:"Leno"},
+          {id:"7",content:"Other"}
+        ],
+        selected_Weave_code: {id:"0",content:"Any"},
+        setFibreClass : function() {
+          $scope.select2.all_Fibre_code = [];
+          $scope.select2.selected_Fibre_code = "Any";
+          $scope.select2.all_Fibre_code.push("Any");
+          for(var i = 0;i <= $scope.data.length - 1;i++) {
+            if(!($scope.data[i].fibre_code in $scope.select2.all_Fibre_code) && $scope.data[i].fibre_class == $scope.select2.selected_Fibre.content) {
+              $scope.select2.all_Fibre_code.push($scope.data[i].fibre_code);
+            }
+          }
+        },
+        setResinClass : function() {
+          $scope.select2.all_Resin_code = [];
+          $scope.select2.selected_Resin_code = "Any";
+          $scope.select2.all_Resin_code.push("Any");
+          for(var i = 0;i <= $scope.data.length - 1;i++) {
+            if(!($scope.data[i].resin_details in $scope.select2.all_Resin_code) && $scope.data[i].resin_classification == $scope.select2.selected_Resin.content) {
+              $scope.select2.all_Resin_code.push($scope.data[i].resin_details);
+            }
+          }
+        }
       };
       $scope.allnews = 
-  		[
-  			{date:"1992.05.08",
+      [
+        {date:"1992.05.08",
          title:"Hello this is a demo",
          content:"The contents",
          id:0},
@@ -94,7 +120,6 @@ angular.module('maxiProjectApp')
          title:"Hello this is a demo",
          content:"The contents",
          id:4}
-  		];
-  	//});
-//});
+      ];
+    });
 });

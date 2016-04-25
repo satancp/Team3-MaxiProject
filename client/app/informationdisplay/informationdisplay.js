@@ -3,7 +3,7 @@
 angular.module('maxiProjectApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/informationdisplay', {
+      .when('/informationdisplay/:type/:content', {
         templateUrl: 'app/informationdisplay/informationdisplay.html',
         controller: 'InformationdisplayCtrl'
       });

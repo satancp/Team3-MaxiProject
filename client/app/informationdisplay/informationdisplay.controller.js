@@ -1,7 +1,15 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('InformationdisplayCtrl', function ($scope, ipCookie, $filter, NgTableParams, $location, $route) {
+  .controller('InformationdisplayCtrl', function ($scope, ipCookie, $filter, NgTableParams, $location, $route, $routeParams, Material) {
+    if($routeParams.type == "list") {
+      Material.getallMaterial().success(function(data) {
+        $scope.data = data;
+      });
+    }
+    else {
+      
+    }
   	$scope.bs = [{text:"This is a business"}];
     $scope.ca = [{text:"This is a category"}];
     $scope.ma = [{text:"This is a market"}];
@@ -13,15 +21,6 @@ angular.module('maxiProjectApp')
       $location.path('/postpage');
       $route.reload();
     };
-  	var data = 
-  	[
-  		{name:"Data1",type:"Fiber"},
-  		{name:"Data2",type:"EX"},
-  		{name:"Data3",type:"Wine"},
-  		{name:"Data4",type:"Game"},
-  		{name:"Data5",type:"Game"}
-
-  	];
   	$scope.tableParams = new NgTableParams({
         page: 1, 
         count: data.length * 0.4,  
