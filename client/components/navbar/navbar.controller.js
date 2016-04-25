@@ -9,6 +9,7 @@ class NavbarController {
     $scope.state_cookie = ipCookie('LoginUser');
     $scope.logout = function () {
       ipCookie.remove('LoginUser');
+      ipCookie.remove('Login');
       $scope.state_cookie = ipCookie('LoginUser');
       $route.reload();
     };

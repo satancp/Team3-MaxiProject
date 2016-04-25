@@ -23,17 +23,6 @@ angular.module('maxiProjectApp')
       $scope.status3 = {
         isopen: false
       };
-      $scope.select1 = {
-        all: [
-          {id:"0",content:"Any"},
-          {id:"1",content:"SHD"},
-          {id:"2",content:"Cytec"},
-          {id:"3",content:"Hexcel"},
-          {id:"4",content:"SGL"},
-          {id:"5",content:"Other"}
-        ],
-        selected: {id:"0",content:"Any"}
-      };
       $scope.select2 = {
         all_Fibre: [
           {id:"0",content:"Any"},
