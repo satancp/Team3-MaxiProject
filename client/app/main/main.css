@@ -17,3 +17,8 @@
   position: absolute;
   right: 5%;
 }
+
+.searchtitle {
+  text-decoration: underline;
+}
+

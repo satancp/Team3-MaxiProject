@@ -10,7 +10,7 @@
         </ol>
         <div class="row">
           <div class="col-md-5">
-            <h3><b>Material Search</b></h3>
+            <h3><b>MATERIAL SEARCH</b></h3>
           </div>
         </div>
         <div class="row">
@@ -43,14 +43,24 @@
             <select ng-model="select2.selected_Weave" required="required" class="form-control" ng-options="option.content for option in select2.all_Weave track by option.id">
             </select>
           </div>
+          <form ng-submit="keywordsearch(searchWord)" role="form" ng-init="searchWord = 'Search for materials....' ">
+            <div class="col-md-6">
+              <label class = "searchtitle">KEYWORD SEARCH</label>
+              <br>
+              <input type="text" name="keywordsearch" id="keywordsearch" ng-model="searchWord" class="form-control">
+            </div>
+          </form>
         </div>
-        <br><br><br>
+        <br><br>
         <div class="row">
           <div class="col-md-1">
             <button class="btn btn-warning" type="button" ng-click="listall()">List All</button>
           </div>
-          <div class="col-md-1" style="padding-left: 3%;">
+          <div  class="col-md-1" style="padding-left: 3%;">
             <button class="btn btn-info" type="button" ng-click="search()">Search</button>
+          </div>
+          <div class="col-md-offset-5" class="col-md-1" style="padding-left: 9.5%;">
+            <button type="submit" class="btn btn-info" >Go</button>
           </div>
         </div>  
         <div class="row">
