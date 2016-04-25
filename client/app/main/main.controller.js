@@ -7,7 +7,7 @@ angular.module('maxiProjectApp')
         $route.reload();
       }
       $scope.search = function() {
-        $location.path('/informationdisplay/search/');
+        $location.path('/informationdisplay/search/' + $scope.select2.selected_Fibre.content + '+' + $scope.select2.selected_Fibre_code + '+' + $scope.select2.selected_Resin.content + '+' + $scope.select2.selected_Resin_code + '+' + $scope.select2.selected_Weave.content);
         $route.reload();
       }
       $scope.request = function() {

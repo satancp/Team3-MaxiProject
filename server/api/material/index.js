@@ -5,8 +5,9 @@ var controller = require('./material.controller');
 
 var router = express.Router();
 
-router.get('/', controller.index);
+router.get('/all/', controller.index);
 router.get('/:id', controller.show);
+router.get('/', controller.search);
 router.post('/', controller.create);
 router.put('/:id', controller.update);
 router.delete('/:id', controller.destroy);

@@ -78,6 +78,30 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+// Gets all relevant Materials from the DB
+export function search(req, res) {
+  var contents = {where:{}};
+  if(req.query.fibreclass != 'Any') {
+    contents.where.fibre_class = req.query.fibreclass;
+  }
+  if(req.query.fibrecode != 'Any') {
+    contents.where.fibre_code = req.query.fibrecode;
+  }
+  if(req.query.resinclass != 'Any') {
+    contents.where.resin_classification = req.query.resinclass;
+  }
+  if(req.query.resincode != 'Any') {
+    contents.where.resin_details = req.query.resincode;
+  }
+  if(req.query.weave != 'Any') {
+    contents.where.weave_pattern = req.query.weave;
+  }
+  Material.findAll(contents)
+    .then(handleEntityNotFound(res))
+    .then(responseWithResult(res))
+    .catch(handleError(res));
+}
+
 // Creates a new Material in the DB
 export function create(req, res) {
   Material.create(req.body)
