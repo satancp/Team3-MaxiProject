@@ -38,3 +38,37 @@
   text-align: center;
   border-radius: 5px;
 }
+
+/*.resultTitle {
+  text-align: right;
+  font-family: Comic;
+  font-size: 1.1em;
+  margin-bottom: 1.5%;
+}
+
+.resultParam {
+  text-align: center;
+  font-family: Comic;
+  font-size: 1.1em;
+  margin-bottom: 1.5%;
+}
+*/
+
+.resultTitle{
+  border: 1px;
+  background-color: black;
+  color: white;
+  font-family: Comic;
+  /*border-collapse: collapse;*/
+
+}
+table tr:nth-child(odd) {
+  font-family: Serif;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  font-family: Serif;
+  text-align: center;
+  background-color: #ffffff;
+}
