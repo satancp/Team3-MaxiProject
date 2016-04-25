@@ -1,4 +1,4 @@
-#mainpage label {
+#mainpage h3 {
   position: relative;
   text-decoration: underline;
   font-size: 2em;
@@ -7,27 +7,11 @@
   color: black;
 }
 
-#mainpage ul li {
-  list-style-position: inside;
+#mainpage label {
+  font-family: Comic;
   font-size: 1em;
-  margin-top: 5px;
-  color: gray;
-}
-
-#mainpage ul li a {
-  font-size: 1.3em;
-  color: gray;
-  letter-spacing: 1px;
-}
-
-#mainpage input {
-  width: 80%;
-}
-
-#mainpage button {
-  border-radius: 5px;
-}
-
+  padding-top: 3%;
+} 
 
 #get {
   position: absolute;
