@@ -7,7 +7,7 @@ angular.module('maxiProjectApp')
         $scope.email = function() {
     	   if(ipCookie('Login')) {
     		  $scope.info = ipCookie('Login');
-               User.getUser(ms.poster_id).success(function(userinfo)){
+               User.getUser(ms.poster_id).success(function(userinfo){
                 $scope.userinfo = userinfo;
                 $location.path("mailto:" + userinfo.email);
               });		  

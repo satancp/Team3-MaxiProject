@@ -8,6 +8,10 @@ angular.module('maxiProjectApp')
         $scope.bs = [{text:"This is a business"}];
         $scope.ca = [{text:"This is a category"}];
         $scope.ma = [{text:"This is a market"}];
+        $scope.go = function(id) {
+          $location.path('/materialDetail/' + id);
+          $route.reload();
+        }
         $scope.get = function() {
           $location.path('/informationdisplay');
           $route.reload();
