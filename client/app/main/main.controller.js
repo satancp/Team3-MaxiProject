@@ -98,28 +98,5 @@ angular.module('maxiProjectApp')
           }
         }
       };
-      $scope.allnews = 
-      [
-        {date:"1992.05.08",
-         title:"Hello this is a demo",
-         content:"The contents",
-         id:0},
-         {date:"1992.05.08",
-         title:"Hello this is a demo",
-         content:"The contents",
-         id:1},
-         {date:"1992.05.08",
-         title:"Hello this is a demo",
-         content:"The contents",
-         id:2},
-         {date:"1992.05.08",
-         title:"Hello this is a demo",
-         content:"The contents",
-         id:3},
-         {date:"1992.05.08",
-         title:"Hello this is a demo",
-         content:"The contents",
-         id:4}
-      ];
     });
 });
