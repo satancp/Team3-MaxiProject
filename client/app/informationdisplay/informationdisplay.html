@@ -1,2 +1,103 @@
-
-
+<navbar>
+</navbar>
+<div id="display">
+    <br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+                <ol class="breadcrumb" id="route">
+                    <li><a href="/main">Home</a></li>
+                    <li><a href="#">Materials</a></li>
+                </ol>
+                <div class="row">
+                    <div class="col-md-3">
+                        <select type="business" name="business" id="business" ng-model="searchForm.business" required="required" class="form-control" ng-options="b.text for b in bs">
+                            <option value="">--choose business--</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select type="category" name="category" id="category" ng-model="searchForm.category" required="required" class="form-control" ng-options="c.text for c in ca">
+                            <option value="">--choose category--</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select type="market" name="market" id="market" ng-model="searchForm.market" required="required" class="form-control" ng-options="m.text for m in ma">
+                            <option value="">--choose market--</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <button id="get" type="button" class="btn btn-info" ng-click="get()">
+                          Get
+                        </button>
+                    </div>
+                </div>
+                <br><hr>
+                <div class="row">
+                    <table ng-table="tableParams" class="table table-bodered">
+                    <tr>
+                        <th class = "resultTitle">FIBRE CLASS</th>
+                        <th class = "resultTitle">FIBRE CODE</th>
+                        <th class = "resultTitle">RESIN CLASS</th>
+                        <th class = "resultTitle">RESIN CODE</th>
+                        <th class = "resultTitle">WEAVE PATTERN</th>
+                        <th class = "resultTitle">DETAIL</th>
+                    </tr>
+                    <tr class = "resultParam" ng-repeat="i in $data">
+                        <td>dddddddd</td>
+                        <td>{{i.fibre_code}}</td>
+                        <td>{{i.resin_classification}}</td>
+                        <td>{{i.resin_details}}</td>
+                        <td>{{i.weave_pattern}}</td>
+                        <td>
+                            <a type="button" href="/materialDetail/{{i.id}}">
+                            detail
+                            </a>
+                        </td>
+                    </tr>
+<!--                     <tr ng-repeat="i in $data">
+                        <td class = "resultTitle" data-title="'Fibre Class'" sortable="'Fibre Class'">
+                            <a class = "resultParam" href="#">
+                                dfdfdfd
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Fibre Code'" sortable="'Fibre Code'">
+                            <a class = "resultParam" href="#">
+                                {{i.fibre_code}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Resin Class'" sortable="'Resin Class'">
+                            <a class = "resultParam" href="#">
+                                {{i.resin_classification}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Resin Code'" sortable="'Resin Code'">
+                            <a class = "resultParam" href="#">
+                                {{i.resin_details}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Weave Pattern'" sortable="'Weave Pattern'">
+                            <a class = "resultParam" href="#">
+                                {{i.weave_pattern}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title ="'Detail'">
+                            <a  class = "resultParam" type="button" href="/materialDetail/{{i.id}}">
+                            detail
+                            </a>
+                        </td>
+                    </tr> -->
+                	</table>
+                </div>
+            </div>
+<!--             <hr>
+            <div class="row">
+                <button id="post" type="button" class="btn btn-default" ng-click="post()">
+                    POST ?
+                </button>
+            </div> -->
+        </div>
+    </div>
+    <br><br><br><br><hr>
+</div>
+<footer>
+</footer>
