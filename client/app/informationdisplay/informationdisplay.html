@@ -34,32 +34,67 @@
                 <br><hr>
                 <div class="row">
                     <table ng-table="tableParams" class="table table-bodered">
-                    <tr ng-repeat="i in $data">
-                        <td data-title="'Name'" sortable="'name'">
-                            <a href="#">
-                                {{i.name}}
-                            </a>
-                        </td>
-                        <td data-title="'Type'" sortable="'type'">
-                            <a href="#">
-                                {{i.type}}
-                            </a>
-                        </td>
-                        <td data-title ="'Detail'">
-                            <a type="button" href="/materialDetail">
+                    <tr>
+                        <th class = "resultTitle">FIBRE CLASS</th>
+                        <th class = "resultTitle">FIBRE CODE</th>
+                        <th class = "resultTitle">RESIN CLASS</th>
+                        <th class = "resultTitle">RESIN CODE</th>
+                        <th class = "resultTitle">WEAVE PATTERN</th>
+                        <th class = "resultTitle">DETAIL</th>
+                    </tr>
+                    <tr class = "resultParam" ng-repeat="i in $data">
+                        <td>dddddddd</td>
+                        <td>{{i.fibre_code}}</td>
+                        <td>{{i.resin_classification}}</td>
+                        <td>{{i.resin_details}}</td>
+                        <td>{{i.weave_pattern}}</td>
+                        <td>
+                            <a type="button" href="/materialDetail/{{i.id}}">
                             detail
                             </a>
                         </td>
                     </tr>
+<!--                     <tr ng-repeat="i in $data">
+                        <td class = "resultTitle" data-title="'Fibre Class'" sortable="'Fibre Class'">
+                            <a class = "resultParam" href="#">
+                                dfdfdfd
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Fibre Code'" sortable="'Fibre Code'">
+                            <a class = "resultParam" href="#">
+                                {{i.fibre_code}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Resin Class'" sortable="'Resin Class'">
+                            <a class = "resultParam" href="#">
+                                {{i.resin_classification}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Resin Code'" sortable="'Resin Code'">
+                            <a class = "resultParam" href="#">
+                                {{i.resin_details}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title="'Weave Pattern'" sortable="'Weave Pattern'">
+                            <a class = "resultParam" href="#">
+                                {{i.weave_pattern}}
+                            </a>
+                        </td>
+                        <td class = "resultTitle" data-title ="'Detail'">
+                            <a  class = "resultParam" type="button" href="/materialDetail/{{i.id}}">
+                            detail
+                            </a>
+                        </td>
+                    </tr> -->
                 	</table>
                 </div>
             </div>
-            <hr>
+<!--             <hr>
             <div class="row">
                 <button id="post" type="button" class="btn btn-default" ng-click="post()">
                     POST ?
                 </button>
-            </div>
+            </div> -->
         </div>
     </div>
     <br><br><br><br><hr>
