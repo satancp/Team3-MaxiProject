@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('MaterialDetailCtrl', function ($scope,ipCookie,Material,User,$routeParams,$window) {
+  .controller('MaterialDetailCtrl', function ($scope,ipCookie,Material,User,$routeParams,$window,$route) {
     Material.getMaterial($routeParams.id).success(function(ms) {
         $scope.ms = ms;
         $scope.email = function() {
@@ -14,6 +14,8 @@ angular.module('maxiProjectApp')
     	   }
     	   else {
     		  alert("Please login first!");
+          $location.path('/signin');
+          $route.reload();
     	   }
         };
     });
