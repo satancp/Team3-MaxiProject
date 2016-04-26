@@ -1,0 +1,26 @@
+#footer{
+    display: inline;
+    background-color: white;
+    border-radius: 0;
+    position: relative;
+    bottom: 0%;
+    width: 100%;
+}
+
+#links {
+    padding-left: 10%;
+}
+
+#links a {
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.social-area {
+    padding-left: 60%;
+}
+
+#footer i {
+    color: dimgray;
+}

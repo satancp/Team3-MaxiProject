@@ -14,9 +14,6 @@ class NavbarController {
       $route.reload();
     };
     
-    $scope.search = function () {
-      alert($scope.keywords);
-    };
     $scope.animationsEnabled = true;
     $scope.login = function () {
       var modalInstance = $uibModal.open({
