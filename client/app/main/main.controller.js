@@ -10,6 +10,11 @@ angular.module('maxiProjectApp')
         $location.path('/informationdisplay/search/' + $scope.select2.selected_Fibre.content + '+' + $scope.select2.selected_Fibre_code + '+' + $scope.select2.selected_Resin.content + '+' + $scope.select2.selected_Resin_code + '+' + $scope.select2.selected_Weave.content);
         $route.reload();
       }
+      $scope.searchWord = 'Search for materials....';
+      $scope.keywordsearch = function() {
+        $location.path('/informationdisplay/keywordsearch/' + $scope.searchWord);
+        $route.reload();
+      }
       $scope.request = function() {
         $location.path('/requestedview');
         $route.reload();

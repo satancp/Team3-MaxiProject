@@ -79,6 +79,55 @@ export function show(req, res) {
 }
 
 // Gets all relevant Materials from the DB
+export function keywordSearch(req, res) {
+  Material.findAll({
+    where: {
+      $or : 
+      [
+        {manufacturer : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {fibre_class : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {fibre_code : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {resin_classification : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {resin_details : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {weave_pattern : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        },
+        {comments : 
+          {
+            $like : '%' + req.params.content + '%'
+          }
+        }
+      ]
+    }
+  })
+    .then(handleEntityNotFound(res))
+    .then(responseWithResult(res))
+    .catch(handleError(res));
+}
+
+// Gets all relevant Materials from the DB
 export function search(req, res) {
   var contents = {where:{}};
   if(req.query.fibreclass != 'Any') {
@@ -111,12 +160,9 @@ export function create(req, res) {
 
 // Updates an existing Material in the DB
 export function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
-  }
   Material.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))
@@ -125,11 +171,24 @@ export function update(req, res) {
     .catch(handleError(res));
 }
 
+// Change an existing Material's state in the DB
+export function changeState(req, res) {
+  Material.find({
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(handleEntityNotFound(res))
+    .then(saveUpdates({stock_state: req.params.state}))
+    .then(responseWithResult(res))
+    .catch(handleError(res));
+}
+
 // Deletes a Material from the DB
 export function destroy(req, res) {
   Material.find({
     where: {
-      _id: req.params.id
+      id: req.params.id
     }
   })
     .then(handleEntityNotFound(res))

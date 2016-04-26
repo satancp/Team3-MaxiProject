@@ -11,6 +11,12 @@ angular.module('maxiProjectApp')
      },
      searchMaterials : function(query) {
           return $http.get('/api/materials?fibreclass=' + query.fibre_class + '&fibrecode=' + query.fibre_code + '&resinclass=' + query.resin_class + '&resincode=' + query.resin_code + '&weave=' + query.weave);
+     },
+     keywordSearchMaterial : function(content) {
+          return $http.get('/api/materials/keyword/' + content);
+     },
+     updateState : function(id,state) {
+          return $http.get('api/materials/' + id + '/' + state);
      }
   };
   return api;

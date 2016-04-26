@@ -20,17 +20,17 @@
                         <th class = "resultTitle">DETAIL</th>
                     </tr>
                     <tr class = "resultParam" ng-repeat="i in data">
-                        <td>{{i.fibre_class}}</td>
-                        <td>{{i.fibre_code}}</td>
-                        <td>{{i.resin_classification}}</td>
-                        <td>{{i.resin_details}}</td>
-                        <td>{{i.weave_pattern}}</td>
+                        <td ng-show = "i.stock_state | cookie('Login').power==1">{{i.fibre_class}}</td>
+                        <td ng-show = "i.stock_state | cookie('Login').power==1">{{i.fibre_code}}</td>
+                        <td ng-show = "i.stock_state | cookie('Login').power==1">{{i.resin_classification}}</td>
+                        <td ng-show = "i.stock_state | cookie('Login').power==1">{{i.resin_details}}</td>
+                        <td ng-show = "i.stock_state | cookie('Login').power==1">{{i.weave_pattern}}</td>
                         <td>
-                            <button ng-click="go(i.id)" class="btn btn-info btn-sm" type="button">
+                            <button ng-show = "i.stock_state | cookie('Login').power==1" ng-click="go(i.id)" class="btn btn-info btn-sm" type="button">
                             DETAIL
                             </button>
-                            <button g-click="deleteitem(i.id)"ng-show="select2.selected_Resin.content!='Any'" class="btn btn-primary btn-sm">
-                            DELETE
+                            <button ng-show="cookie('Login').power==1" ng-click="change(i.id)" class="btn btn-primary btn-sm">
+                            {{button_fuck[i.stock_state]}}
                             </buton>
                         </td>
                     </tr>
