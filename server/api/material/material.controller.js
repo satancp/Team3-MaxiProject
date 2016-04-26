@@ -86,37 +86,38 @@ export function keywordSearch(req, res) {
       [
         {manufacturer : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
+
         },
         {fibre_class : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         },
         {fibre_code : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         },
         {resin_classification : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         },
         {resin_details : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         },
         {weave_pattern : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         },
         {comments : 
           {
-            $like : '%' + req.params.content + '%'
+            $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
         }
       ]
