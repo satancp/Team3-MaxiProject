@@ -2,18 +2,18 @@
 
 angular.module('maxiProjectApp')
   .controller('InformationdisplayCtrl', function ($scope, ipCookie, $filter, NgTableParams, $location, $route, $routeParams, Material) {
-    if($routeParams.type == "list") {
+    if($routeParams.type === 'list') {
       Material.getallMaterial().success(function(data) {
         $scope.data = data;
         $scope.cookie = ipCookie;
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
-        }
-        $scope.button_fuck = {'true': "Out", 'false': "In"};
+        };
+        $scope.button_fuck = {'true': 'Out', 'false': 'In'};
         $scope.change = function(id) {
           for(var i = 0;i <= $scope.data.length - 1;i++) {
-            if($scope.data[i].id == id) {
+            if($scope.data[i].id === id) {
               $scope.data[i].stock_state = !$scope.data[i].stock_state;
               Material.updateState(id,$scope.data[i].stock_state).success(function(result) {
                 $location.replace();
@@ -40,7 +40,7 @@ angular.module('maxiProjectApp')
         });
       });
     }
-    else if($routeParams.type == 'search') {
+    else if($routeParams.type === 'search') {
       var query_array = $routeParams.content.split('+');
       var query = {
         fibre_class: query_array[0],
@@ -55,11 +55,11 @@ angular.module('maxiProjectApp')
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
-        }
-        $scope.button_fuck = {'true': "Out", 'false': "In"};
+        };
+        $scope.button_fuck = {'true': 'Out', 'false': 'In'};
         $scope.change = function(id) {
           for(var i = 0;i <= $scope.data.length - 1;i++) {
-            if($scope.data[i].id == id) {
+            if($scope.data[i].id === id) {
               $scope.data[i].stock_state = !$scope.data[i].stock_state;
               Material.updateState(id,$scope.data[i].stock_state).success(function(result) {
                 $location.replace();
@@ -93,11 +93,11 @@ angular.module('maxiProjectApp')
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
-        }
-        $scope.button_fuck = {'true': "Out", 'false': "In"};
+        };
+        $scope.button_fuck = {'true': 'Out', 'false': 'In'};
         $scope.change = function(id) {
           for(var i = 0;i <= $scope.data.length - 1;i++) {
-            if($scope.data[i].id == id) {
+            if($scope.data[i].id === id) {
               $scope.data[i].stock_state = !$scope.data[i].stock_state;
               Material.updateState(id,$scope.data[i].stock_state).success(function(result) {
                 $location.replace();

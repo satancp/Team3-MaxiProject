@@ -131,19 +131,19 @@ export function keywordSearch(req, res) {
 // Gets all relevant Materials from the DB
 export function search(req, res) {
   var contents = {where:{}};
-  if(req.query.fibreclass != 'Any') {
+  if(req.query.fibreclass !== 'Any') {
     contents.where.fibre_class = req.query.fibreclass;
   }
-  if(req.query.fibrecode != 'Any') {
+  if(req.query.fibrecode !== 'Any') {
     contents.where.fibre_code = req.query.fibrecode;
   }
-  if(req.query.resinclass != 'Any') {
+  if(req.query.resinclass !== 'Any') {
     contents.where.resin_classification = req.query.resinclass;
   }
-  if(req.query.resincode != 'Any') {
+  if(req.query.resincode !== 'Any') {
     contents.where.resin_details = req.query.resincode;
   }
-  if(req.query.weave != 'Any') {
+  if(req.query.weave !== 'Any') {
     contents.where.weave_pattern = req.query.weave;
   }
   Material.findAll(contents)

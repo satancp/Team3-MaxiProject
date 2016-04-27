@@ -1,6 +1,6 @@
 <div id="navigation" role="navigation" ng-controller="NavbarController">
-<div id="background">
-  <img src="/assets/images/bg.jpg" />
+<div>
+  <img src="/assets/images/bg.jpg" id="background" />
   <div class="container"> 
     <div class="navbar-header"> 
       <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
@@ -8,12 +8,13 @@
         <span class="icon-bar bar1"></span>
         <span class="icon-bar bar2"></span>
         <span class="icon-bar bar3"></span>
-      </button>    
-        <a href="#" class="navbar-brand" id="brand">Team-3 LOGO PLACE
+      </button>   
+        <a href="#" class="navbar-brand">
+          <img src="/assets/images/logo.png" style="height:70px; position: absolute;top:0;left:0;" />
         </a>
     </div>
   </div>
-  <div class="nav nav-tabs" id="nav-tabs">
+  <div class="nav nav-tabs">
     <li><a href="/main"><i class="fa fa-home"></i></a></li>
     <li><a href="/requestedview">Material Requirement</a></li>
     <li ng-show="state_cookie==1">

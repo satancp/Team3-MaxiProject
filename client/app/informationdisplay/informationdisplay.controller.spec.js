@@ -15,7 +15,7 @@ describe('Controller: InformationdisplayCtrl', function () {
     });
   }));
 
-  it('should ...', function () {
+  it('should attach an initial state', function () {
     expect(1).toEqual(1);
   });
 });
