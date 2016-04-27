@@ -21,14 +21,14 @@ function sendConfirmationMail(user) {
     port: 465,
     secure: true,
     auth: {
-        user: 'zx603852402@gmail.com',
+        user: 'materialinsheffield@gmail.com',
         pass: 'wsxjw113'
     }
   };
   var url = 'localhost:9000/confirmation/' + user.confirmation;
   var transporter = nodemailer.createTransport(smtpConfig);
   var mailOptions = {
-    from: 'zx603852402@gmail.com',
+    from: 'materialinsheffield@gmail.com',
     to: user.email,
     subject: 'Hello New User', 
     text: 'Hello, welcome to join in material sheffield. Please click this confirmation url to complete your registeration.', 
