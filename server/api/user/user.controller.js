@@ -32,7 +32,7 @@ function sendConfirmationMail(user) {
     to: user.email,
     subject: 'Hello New User', 
     text: 'Hello, welcome to join in material sheffield. Please click this confirmation url to complete your registeration.', 
-    html: "<b>Hello, welcome to join in material sheffield.</b><br/><p>Please click this confirmation url to complete your registeration.</p><br/><a href=" + url + ">Confirm your registeration</a><br/><p>If you cannot click it, just copy the url by yourself.</p><br/><p>URL:" + url + "</p>"
+    html: "<b>Hello, welcome to join in material sheffield.</b><br/><p>Please click this confirmation url to complete your registeration.</p><br/><a href=" + url + ">Confirm your registeration</a><br/><p>If you cannot click it, just copy the url by yourself.</p><br/><p>URL:   " + url + "</p>"
   };
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
