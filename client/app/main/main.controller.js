@@ -25,7 +25,6 @@ angular.module('maxiProjectApp')
       $scope.postmaterial = function(){
         var modalInstance = $uibModal.open({
         animation: $scope.animationsEnabled,
-
         templateUrl: 'app/postpage/postpage.html',
         controller: 'PostpageCtrl',
         size: 'md'

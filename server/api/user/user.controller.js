@@ -12,6 +12,35 @@
 var _ = require('lodash');
 var sqldb = require('../../sqldb');
 var User = sqldb.User;
+var nodemailer = require('nodemailer');
+var crypto = require("crypto");
+
+function sendConfirmationMail(user) {
+  var smtpConfig = {
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    auth: {
+        user: 'zx603852402@gmail.com',
+        pass: 'wsxjw113'
+    }
+  };
+  var url = 'localhost:9000/confirmation/' + user.confirmation;
+  var transporter = nodemailer.createTransport(smtpConfig);
+  var mailOptions = {
+    from: 'zx603852402@gmail.com',
+    to: user.email,
+    subject: 'Hello New User', 
+    text: 'Hello, welcome to join in material sheffield. Please click this confirmation url to complete your registeration.', 
+    html: "<b>Hello, welcome to join in material sheffield.</b><br/><p>Please click this confirmation url to complete your registeration.</p><br/><a href=" + url + ">Confirm your registeration</a><br/><p>If you cannot click it, just copy the url by yourself.</p><br/><p>URL:" + url + "</p>"
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+  });
+}
 
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
@@ -24,6 +53,16 @@ function responseWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
     if (entity) {
+      res.status(statusCode).json(entity);
+    }
+  };
+}
+
+function responseWithResultSignup(res, email, statusCode) {
+  statusCode = statusCode || 200;
+  return function(entity) {
+    if (entity) {
+      sendConfirmationMail(email);
       res.status(statusCode).json(entity);
     }
   };
@@ -81,7 +120,7 @@ exports.show = function show(req, res) {
 // Creates a new User in the DB
 exports.create = function create(req, res) {
   User.create(req.body)
-    .then(responseWithResult(res, 201))
+    .then(responseWithResultSignup(res, req.body, 201))
     .catch(handleError(res));
 }
 
@@ -97,10 +136,22 @@ exports.login = function login(req, res) {
     .catch(handleError(res));
 }
 
+exports.confirmation = function confirmation(req, res) {
+  User.find({
+    where: {
+      confirmation: req.params.content,
+    }
+  })
+    .then(handleEntityNotFound(res))
+    .then(saveUpdates({confirmation_state: true}))
+    .then(responseWithResult(res))
+    .catch(handleError(res));
+}
+
 // Updates an existing User in the DB
 exports.update = function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
+  if (req.body.id) {
+    delete req.body.id;
   }
   User.find({
     where: {

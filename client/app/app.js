@@ -8,7 +8,8 @@ angular.module('maxiProjectApp', [
   'ngRoute',
   'ui.bootstrap',
   'ipCookie',
-  'ngTable'
+  'ngTable',
+  'uuid'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

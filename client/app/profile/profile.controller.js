@@ -2,8 +2,5 @@
 
 angular.module('maxiProjectApp')
   .controller('ProfileCtrl', function ($scope,ipCookie) {
-  	
-  		$scope.bs = bs.name;
-  		$scope.info = ipCookie('Login');
-
+  	$scope.info = ipCookie('Login');
   });

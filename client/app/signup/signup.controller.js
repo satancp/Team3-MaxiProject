@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('SignupCtrl', function ($scope, ipCookie, Question, User, $uibModalInstance, $location, $route) {
+  .controller('SignupCtrl', function ($scope, ipCookie, Question, User, $uibModalInstance, $location, $route, rfc4122) {
   Question.getallQuestion().success(function(sqs) {
         $scope.sqs = sqs;
         $scope.handleRegBtnClick = function () {
@@ -14,6 +14,8 @@ angular.module('maxiProjectApp')
           data.answer = $scope.registrationForm.answer;
           data.phonenumber = $scope.registrationForm.phonenumber;
           data.power = 0;
+          data.confirmation = rfc4122.v4();
+          data.confirmation_state = false;
           User.addUser(data).success(function (added_user) {
             alert("Successfully!Enjoy~");
             $uibModalInstance.dismiss('ok');

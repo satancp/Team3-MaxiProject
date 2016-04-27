@@ -9,6 +9,9 @@ angular.module('maxiProjectApp')
      getUser : function(id) {
           return $http.get('/api/users/'+id);
      },
+     confirmUser : function(content) {
+          return $http.get('/api/users/confirm/'+content);
+     },
      loginUser : function(user) {
           return $http.post('/api/users/login',user);
      },
