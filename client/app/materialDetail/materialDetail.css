@@ -10,14 +10,14 @@
 
 .details .name {
 	text-align: right;
-	font-family: Comic;
+	font-family: Times New Roman;
 	font-size: 1.1em;
 	margin-bottom: 1.5%;
 }
 
 .details .param {
 	text-align: left;
-	font-family: Comic;
+	font-family: Times New Roman;
 	font-size: 1.1em;
 	margin-bottom: 1.5%;
 }
@@ -28,12 +28,12 @@
 }
 
 #materialdetailstab th{
-background-color:#e6f9ff;
+	background-color:#e6f9ff;
 }
 
 .details h3 {
 	text-align: center;
-	font-family: Comic;
+	font-family: Times New Roman;
 	font-weight: bold;
 	font-size: 2.3em;
 	margin-bottom: 2%;

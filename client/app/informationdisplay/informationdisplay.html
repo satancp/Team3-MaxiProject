@@ -1,14 +1,9 @@
 <navbar>
 </navbar>
 <div id="display">
-    <br>
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="row">
-                <ol class="breadcrumb" id="route">
-                    <li><a href="/main">Home</a></li>
-                    <li><a href="#" style="color: black;">Materials</a></li>
-                </ol>
                 <div class="row">
                     <table ng-table="tableParams" class="table table-bodered">
                     <tr>
@@ -34,47 +29,9 @@
                             </buton>
                         </td>
                     </tr>
-<!--                     <tr ng-repeat="i in $data">
-                        <td class = "resultTitle" data-title="'Fibre Class'" sortable="'Fibre Class'">
-                            <a class = "resultParam" href="#">
-                                dfdfdfd
-                            </a>
-                        </td>
-                        <td class = "resultTitle" data-title="'Fibre Code'" sortable="'Fibre Code'">
-                            <a class = "resultParam" href="#">
-                                {{i.fibre_code}}
-                            </a>
-                        </td>
-                        <td class = "resultTitle" data-title="'Resin Class'" sortable="'Resin Class'">
-                            <a class = "resultParam" href="#">
-                                {{i.resin_classification}}
-                            </a>
-                        </td>
-                        <td class = "resultTitle" data-title="'Resin Code'" sortable="'Resin Code'">
-                            <a class = "resultParam" href="#">
-                                {{i.resin_details}}
-                            </a>
-                        </td>
-                        <td class = "resultTitle" data-title="'Weave Pattern'" sortable="'Weave Pattern'">
-                            <a class = "resultParam" href="#">
-                                {{i.weave_pattern}}
-                            </a>
-                        </td>
-                        <td class = "resultTitle" data-title ="'Detail'">
-                            <a  class = "resultParam" type="button" href="/materialDetail/{{i.id}}">
-                            detail
-                            </a>
-                        </td>
-                    </tr> -->
                 	</table>
                 </div>
             </div>
-<!--             <hr>
-            <div class="row">
-                <button id="post" type="button" class="btn btn-default" ng-click="post()">
-                    POST ?
-                </button>
-            </div> -->
         </div>
     </div>
     <br><br><br><br>
