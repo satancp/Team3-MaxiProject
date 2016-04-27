@@ -27,12 +27,12 @@ angular.module('maxiProjectApp')
       return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
     }
 
-    $scope.open1 = function() {
+    $scope.open = function() {
       $scope.popup1.opened = true;
     };
 
 
-    $scope.popup1 = {
+    $scope.popup = {
       opened: false
     };
     $scope.setDate = function(year, month, day) {
@@ -76,7 +76,7 @@ angular.module('maxiProjectApp')
   	$scope.model = {weight: 'e.g. 10g'};
 
 
-    $scope.handleRegBtnClick = function () {
+    $scope.handlePostBtnClick = function () {
           var materialdata = new Object();
           materialdata.manufacturer = $scope.postMaterialForm.manufacturer;
           materialdata.manufacturer_date = $postMaterialForm.manufacturer_date;

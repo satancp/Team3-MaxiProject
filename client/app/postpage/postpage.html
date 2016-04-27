@@ -1,23 +1,25 @@
-<div id="modal-body">
-	<br>
-    <ul>
-    	<form name="form" ng-submit="handleRegBtnClick(postMaterialForm)" role="form" ng-init="postMaterialForm = {}"novalidate>
+<div class="modal-header">
+  POST PAGE
+</div>
+<div class="modal-body">
+  <ul>
+    <form name="form" ng-submit="handlePostBtnClick(postMaterialForm)" role="form" ng-init="postMaterialForm = {}" novalidate>
     		<div class="form-group">
-    			<label>Manufacturer: </label>
-    			<input type="text" name="manufacturer" id="manufacturer" class = "col-md-11"  ng-model="postMaterialForm.manufacturer" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Manufacturing Date: </label>
-    			    <div class="row">
-      					<div class="col-md-6">
+          <div class="row">
+      			<label>Manufacturer:</label>
+      			<input type="text" name="manufacturer" id="manufacturer" ng-model="postMaterialForm.manufacturer" required="required" class="form-control">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+    			    <label>Manufacturing Date:</label>
         					<p class="input-group">
-          					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="postMaterialForm.manufacturer" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+          					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="postMaterialForm.manufacturer_date" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
           					<span class="input-group-btn">
-            				<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-          						</span>
+            				  <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
+          					</span>
         					</p>
-     				 	</div>
-    				</div>
+     				 </div>
+    			</div>
   			</div>
   			<div class="form-group">
     			<label>Due Date:</label>

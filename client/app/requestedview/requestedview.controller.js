@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('RequestedviewCtrl', function($scope, ipCookie, $filter, NgTableParams, $location, $route) {
+  .controller('RequestedviewCtrl', function($scope, ipCookie, $filter, NgTableParams, $location, $route, $uibModal) {
     $scope.un = [{text:'This is a user name'},{text:'e.g. John'}];
     $scope.mn = [{text:'This is a material name'},{text:'e.g. Material Name'}];
     $scope.ca = [{text:'This is a material category'},{text:'e.g. Material Type'}];
@@ -11,8 +11,12 @@ angular.module('maxiProjectApp')
     	$route.reload();
     };
 	  $scope.post = function() {
-      $location.path('/postpage');
-      $route.reload();
+      var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'app/postpage/postpage.html',
+        controller: 'PostpageCtrl',
+        size: ''
+      });
     };
 	  var data = 
   	[

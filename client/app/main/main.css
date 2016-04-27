@@ -1,15 +1,14 @@
 #mainpage h3 {
   position: relative;
-  text-decoration: underline;
   font-size: 2em;
-  font-family: Comic;
+  font-family: Times New Roman;
   letter-spacing: 2px;
   color: black;
 }
 
 #mainpage label {
-  font-family: Comic;
-  font-size: 1em;
+  font-family: Times New Roman;
+  font-size: 1.5em;
   padding-top: 3%;
 } 
 
@@ -18,7 +17,32 @@
   right: 5%;
 }
 
-.searchtitle {
-  text-decoration: underline;
+#searchpart {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid lightgray;
 }
+
+#keywordsearch {
+  width: 85%;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#searchBtn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#searchBtn i {
+  padding: 0;
+  color: dimgray;
+  border: 0;
+  margin-top: 1%;
+  margin-right: 2%;
+}
+
 
