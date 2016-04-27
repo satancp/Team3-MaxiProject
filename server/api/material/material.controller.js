@@ -88,7 +88,6 @@ export function keywordSearch(req, res) {
           {
             $like : sqldb.sequelize.fn('lower', '%' + req.params.content + '%')
           }
-
         },
         {fibre_class : 
           {
