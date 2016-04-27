@@ -13,7 +13,6 @@ var _ = require('lodash');
 var sqldb = require('../../sqldb');
 var User = sqldb.User;
 var nodemailer = require('nodemailer');
-var crypto = require("crypto");
 
 function sendConfirmationMail(user) {
   var smtpConfig = {
