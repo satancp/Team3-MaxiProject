@@ -57,6 +57,9 @@
           <div  class="col-md-1" style="padding-left: 3%;">
             <button class="btn btn-info" type="button" ng-click="search()">Search</button>
           </div>
+          <div ng-show = "cookie('LoginUser')==1" class="col-md-3" style="padding-left: 4%;">
+            <button ng-click="postmaterial()" class = "btn btn-success"> POST MATERIALS</button> 
+          </div>
           <div class="col-md-offset-5" class="col-md-1" style="padding-left: 9.5%;">
               <button type="button" class="btn btn-info" ng-click="keywordsearch()">Go</button>
           </div>

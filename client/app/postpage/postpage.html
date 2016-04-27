@@ -1,0 +1,57 @@
+<div id="modal-body">
+	<br>
+    <ul>
+    	<form name="form" ng-submit="handleRegBtnClick(postMaterialForm)" role="form" ng-init="postMaterialForm = {}"novalidate>
+    		<div class="form-group">
+    			<label>Manufacturer: </label>
+    			<input type="text" name="manufacturer" id="manufacturer" class = "col-md-11"  ng-model="postMaterialForm.manufacturer" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Manufacturing Date: </label>
+    			    <div class="row">
+      					<div class="col-md-6">
+        					<p class="input-group">
+          					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="postMaterialForm.manufacturer" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+          					<span class="input-group-btn">
+            				<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          						</span>
+        					</p>
+     				 	</div>
+    				</div>
+  			</div>
+  			<div class="form-group">
+    			<label>Due Date:</label>
+    			<input type="text" name="use_by_date" id="use_by_date" class = "col-md-11"  ng-model="postMaterialForm.use_by_date" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Fibre Class:</label>
+    			<input type="text" name="fibre_class" id="fibre_class" class = "col-md-11"  ng-model="postMaterialForm.fibre_class" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Fibre Code: </label>
+    			<input type="text" name="fibre_code" id="fibre_code" class = "col-md-11"  ng-model="postMaterialForm.fibre_code" required="required" class="form-control">
+  			</div>
+  			 <div class="form-group">
+    			<label>Resin Class: </label>
+    			<input type="text" name="resin_classification" id="resin_classification" class = "col-md-11"  ng-model="postMaterialForm.resin_classification" required="required" class="form-control">
+  			</div>
+  			 <div class="form-group">
+    			<label>Weave Pattern: </label>
+    			<input type="text" name="weave_pattern" id="weave_pattern" class = "col-md-11"  ng-model="postMaterialForm.weave_pattern" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Fabric Weight/gsm: </label>
+    			<input type="text" name="fabric_weight" id="fabric_weight" class = "col-md-11"  ng-model="postMaterialForm.fabric_weight" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Quantity Available: </label>
+    			<input type="text" name="quantity" id="quantity" class = "col-md-11"  ng-model="postMaterialForm.quantity" required="required" class="form-control">
+  			</div>
+  			<div class="form-group">
+    			<label>Other Comments: </label>
+    			<input type="text" name="comments" id="comments" class = "col-md-11"  ng-model="postMaterialForm.comments" required="required" class="form-control">
+  			</div>
+  			<button type="submit" class="btn btn-primary">POST</button>
+		</form>
+	</ul>
+</div>

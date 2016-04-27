@@ -1,8 +1,10 @@
 'use strict';
 angular.module('maxiProjectApp')
-  .controller('MainController', function ($scope, ipCookie, $location, $route, Material) {
+  .controller('MainController', function ($scope, ipCookie, $location, $route, $uibModal, Material) {
     Material.getallMaterial().success(function(data) {
       $scope.data = data;
+      $scope.cookie = ipCookie;
+      $scope.animationsEnabled = true;
       $scope.listall = function() {
         $location.path('/informationdisplay/list/all');
         $route.reload();
@@ -20,6 +22,16 @@ angular.module('maxiProjectApp')
         $location.path('/requestedview');
         $route.reload();
       };
+      $scope.postmaterial = function(){
+        var modalInstance = $uibModal.open({
+        animation: $scope.animationsEnabled,
+
+        templateUrl: 'app/postpage/postpage.html',
+        controller: 'PostpageCtrl',
+        size: 'md'
+      });
+      }
+
       $scope.status1 = {
         isopen: false
       };
