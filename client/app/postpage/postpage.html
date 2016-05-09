@@ -1,59 +1,102 @@
 <div class="modal-header">
-  POST PAGE
+	<h2 class="modal-title">
+		POST PAGE
+	</h2>
 </div>
 <div class="modal-body">
-  <ul>
-    <form name="form" ng-submit="handlePostBtnClick(postMaterialForm)" role="form" ng-init="postMaterialForm = {}" novalidate>
-    		<div class="form-group">
-          <div class="row">
-      			<label>Manufacturer:</label>
-      			<input type="text" name="manufacturer" id="manufacturer" ng-model="postMaterialForm.manufacturer" required="required" class="form-control">
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-    			    <label>Manufacturing Date:</label>
-        					<p class="input-group">
-          					<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="postMaterialForm.manufacturer_date" is-open="popup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
-          					<span class="input-group-btn">
-            				  <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
-          					</span>
-        					</p>
-     				 </div>
-    			</div>
-  			</div>
-  			<div class="form-group">
-    			<label>Due Date:</label>
-    			<input type="text" name="use_by_date" id="use_by_date" class = "col-md-11"  ng-model="postMaterialForm.use_by_date" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Fibre Class:</label>
-    			<input type="text" name="fibre_class" id="fibre_class" class = "col-md-11"  ng-model="postMaterialForm.fibre_class" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Fibre Code: </label>
-    			<input type="text" name="fibre_code" id="fibre_code" class = "col-md-11"  ng-model="postMaterialForm.fibre_code" required="required" class="form-control">
-  			</div>
-  			 <div class="form-group">
-    			<label>Resin Class: </label>
-    			<input type="text" name="resin_classification" id="resin_classification" class = "col-md-11"  ng-model="postMaterialForm.resin_classification" required="required" class="form-control">
-  			</div>
-  			 <div class="form-group">
-    			<label>Weave Pattern: </label>
-    			<input type="text" name="weave_pattern" id="weave_pattern" class = "col-md-11"  ng-model="postMaterialForm.weave_pattern" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Fabric Weight/gsm: </label>
-    			<input type="text" name="fabric_weight" id="fabric_weight" class = "col-md-11"  ng-model="postMaterialForm.fabric_weight" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Quantity Available: </label>
-    			<input type="text" name="quantity" id="quantity" class = "col-md-11"  ng-model="postMaterialForm.quantity" required="required" class="form-control">
-  			</div>
-  			<div class="form-group">
-    			<label>Other Comments: </label>
-    			<input type="text" name="comments" id="comments" class = "col-md-11"  ng-model="postMaterialForm.comments" required="required" class="form-control">
-  			</div>
-  			<button type="submit" class="btn btn-primary">POST</button>
-		</form>
-	</ul>
+	<form ng-submit="postBtnClick(postForm)" role="form" ng-init="postForm = {}">
+		<div class="form-group">
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="manufacturer">Manufacturer: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="manufacturer" ng-model="postForm.manufacturer" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="manufacturer_date">Manufacturing Date: </label>
+				</div>
+				<div class="col-md-7">
+					<p class="input-group">
+						<input type="manufacturer_date" ng-model="postForm.manufacturer_date" required="required" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup.opened" datepicker-options="dateOptions">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open()">
+								<i class="fa fa-calendar"></i>
+							</button>
+						</span>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="use_by_date">Due Date: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="use_by_date" ng-model="postForm.use_by_date" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="fibre_class">Fibre Class: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="fibre_class" ng-model="postForm.fibre_class" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="fibre_code">Fibre Code: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="fibre_code" ng-model="postForm.fibre_code" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="resin_class">Resin Class: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="resin_class" ng-model="postForm.resin_class" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="weave_pattern">Weave Pattern: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="weave_pattern" ng-model="postForm.weave_pattern" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="fabric_weight">Fabric Weight/gsm: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="fabric_weight" ng-model="postForm.fabric_weight" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="quantity">Quantity Available: </label>
+				</div>
+				<div class="col-md-7">
+					<input type="quantity" ng-model="postForm.quantity" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-3">
+					<label for="comments">Other Comments</label>
+				</div>
+				<div class="col-md-7">
+					<input type="comments" ng-model="postForm.comments" required="required" class="form-control">
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button type="submit" class="btn btn-primary">Post</button>
+	<button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>

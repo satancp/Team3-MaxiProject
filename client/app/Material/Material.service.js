@@ -17,7 +17,7 @@ angular.module('maxiProjectApp')
      },
      keywordSearchMaterial : function(content) {
           return $http.get('/api/materials/keyword/' + content);
-     },
+     }, 
      updateState : function(id,state) {
           return $http.get('api/materials/' + id + '/' + state);
      }

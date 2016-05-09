@@ -1,102 +1,64 @@
 'use strict';
 
 angular.module('maxiProjectApp')
-  .controller('PostpageCtrl', function ($scope, ipCookie, $location, $route) {
-   
+  .controller('PostpageCtrl', function ($scope, ipCookie, $location, $route, $uibModalInstance, Material) {
+    $scope.postBtnClick = function() {
+        var data = new Object();
+        data.manufacturer = $scope.postForm.manufacturer;
+        data.manufacturer_date = $scope.postForm.manufacturer_date;
+        data.use_by_date = $scope.postForm.use_by_date;
+        data.fibre_class = $scope.postForm.fibre_class;
+        data.fibre_code = $scope.postForm.fibre_code;
+        data.resin_class = $scope.postForm.resin_class;
+        data.weave_pattern = $scope.postForm.weave_pattern;
+        data.fabric_weight = $scope.postForm.fabric_weight;
+        data.quantity = $scope.postForm.quantity;
+        data.comments = $scope.postForm.comments;
+        Material.addMaterials(data).success(function(added_material) {
+        	$uibModalInstance.dismiss('ok');
+        	$scope.err = undefined;
+            $location.path('/');
+            $route.reload();
+        }).error(function(err){
+            $scope.err = err;
+        });
+    };
 
-    $scope.post = function() {
-      $location.path('/main');
-      $route.reload();
-    }
+    $scope.cancel = function() {
+    	$uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.today = function() {
+    	$scope.postForm.manufacturer_date = new Date();
+    };
+    $scope.today();
 
     $scope.clear = function() {
-    	$scope.postMaterialForm.manufacturer_date = null;
+    	$scope.postForm.manufacturer_date = null;
     };
+
+    function disabled(data) {
+      	var date = data.date,
+      	mode = data.mode;
+      	return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    }
 
     $scope.dateOptions = {
 	    dateDisabled: disabled,
 	    formatYear: 'yy',
 	    maxDate: new Date(2020, 5, 22),
 	    minDate: new Date(),
-	    startingDay: 1
+	    startingDay: 1,
+	    showWeeks: false
 	  };
 
-    function disabled(data) {
-      var date = data.date,
-      mode = data.mode;
-      return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-    }
-
     $scope.open = function() {
-      $scope.popup1.opened = true;
+      $scope.popup.opened = true;
     };
-
 
     $scope.popup = {
       opened: false
     };
-    $scope.setDate = function(year, month, day) {
-      $scope.postMaterialForm.manufacturer_date = new Date(year, month, day);
-    };
 
     $scope.format = 'dd-MMMM-yyyy';
-    $scope.altInputFormats = ['M!/d!/yyyy'];
-
-    var tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    var afterTomorrow = new Date();
-    afterTomorrow.setDate(tomorrow.getDate() + 1);
-    $scope.events = [
-      {
-        date: tomorrow,
-        status: 'full'
-      },
-      {
-        date: afterTomorrow,
-        status: 'partially'
-      }
-    ];
-  	
-    function getDayClass(data) {
-      alert("fuck");
-    	var date = data.date,
-      	mode = data.mode;
-    	if (mode === 'day') {
-      		var dayToCheck = new Date(date).setHours(0,0,0,0);
-      		for (var i = 0; i < $scope.events.length; i++) {
-        		var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-        		if (dayToCheck === currentDay) {
-          			return $scope.events[i].status;
-        		}
-      		}
-    	}
-    	return '';
-  	}
-
-  	$scope.model = {weight: 'e.g. 10g'};
-
-
-    $scope.handlePostBtnClick = function () {
-          var materialdata = new Object();
-          materialdata.manufacturer = $scope.postMaterialForm.manufacturer;
-          materialdata.manufacturer_date = $postMaterialForm.manufacturer_date;
-          materialdata.use_by_date = $scope.postMaterialForm.use_by_date;
-          materialdata.fibre_class = $scope.postMaterialForm.fibre_class;
-          materialdata.fibre_code = $scope.postMaterialForm.fibre_code;
-          materialdata.resin_classification = $scope.postMaterialForm.resin_classification;
-          materialdata.weave_pattern = $scope.postMaterialForm.weave_pattern;
-          materialdata.fabric_weight = $postMaterialForm.fabric_weight;
-          materialdata.quantity = $scope.postMaterialForm.quantity;
-          materialdata.comments = $scope.postMaterialForm.comments;
-          // Material.addMaterials(data).success(function () {  
-          //   $uibModalInstance.dismiss('ok');
-          //   $scope.err = undefined;
-          //   $location.path('/');
-          //   $route.reload();
-          // }).error(function(err){
-          //   $scope.err = err;
-          // });
-        };
-
 });
-

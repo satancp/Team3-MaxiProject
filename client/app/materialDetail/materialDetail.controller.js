@@ -10,6 +10,7 @@ angular.module('maxiProjectApp')
     		  $scope.info = ipCookie('Login');
                User.getUser(ms.poster_id).success(function(userinfo){
                 $scope.userinfo = userinfo;
+                alert("Telephone Number: " + userinfo.phonenumber);
                 $window.location = "mailto:" + userinfo.email;
               });		  
     	   }
