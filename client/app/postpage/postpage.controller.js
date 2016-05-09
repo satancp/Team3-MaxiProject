@@ -7,6 +7,12 @@ angular.module('maxiProjectApp')
         data.manufacturer = $scope.postForm.manufacturer;
         data.manufacturer_date = $scope.postForm.manufacturer_date;
         data.use_by_date = $scope.postForm.use_by_date;
+        if($scope.select.selected_Fibre.content != 'Carbon') {
+            data.fibre_class = $scope.select.selected_Fibre.content;
+        }
+        else {
+            data.fibre_class = $scope.select.input_Fibre;
+        }
         data.fibre_class = $scope.postForm.fibre_class;
         data.fibre_code = $scope.postForm.fibre_code;
         data.resin_class = $scope.postForm.resin_class;
@@ -23,6 +29,22 @@ angular.module('maxiProjectApp')
             $scope.err = err;
         });
     };
+
+    $scope.select = {
+        all_Fibre: [
+          {id:'0',content:'Carbon'},
+          {id:'1',content:'Glass'},
+          {id:'2',content:'Kevlar'},
+          {id:'3',content:'Other'}
+        ],
+        selected_Fibre: {id:'0',content:'Carbon'},
+        setFibreInputState : function() {
+          if(selected_Fibre.content == 'Carbon') {
+            state = true;
+          }
+        },
+        state : false
+      };
 
     $scope.cancel = function() {
     	$uibModalInstance.dismiss('cancel');
