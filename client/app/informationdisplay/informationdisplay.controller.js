@@ -7,7 +7,7 @@ angular.module('maxiProjectApp')
     if($routeParams.type === 'list') {
       Material.getallMaterial().success(function(data) {
         for(var i = 0;i <= data.length - 1;i++) {
-          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+          if((data[i].stock_state && $scope.cookie('Login').power != 1) || ($scope.cookie('Login').power == 1)) {
             $scope.data.push(data[i]);
           }
         }
@@ -56,7 +56,7 @@ angular.module('maxiProjectApp')
       };
       Material.searchMaterials(query).success(function(result) {
         for(var i = 0;i <= data.length - 1;i++) {
-          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+          if((data[i].stock_state && $scope.cookie('Login').power != 1) || ($scope.cookie('Login').power == 1)) {
             $scope.data.push(data[i]);
           }
         }
@@ -97,7 +97,7 @@ angular.module('maxiProjectApp')
     else {
       Material.keywordSearchMaterial($routeParams.content).success(function(data) {
         for(var i = 0;i <= data.length - 1;i++) {
-          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+          if((data[i].stock_state && $scope.cookie('Login').power != 1) || ($scope.cookie('Login').power == 1)) {
             $scope.data.push(data[i]);
           }
         }
