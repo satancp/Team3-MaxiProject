@@ -3,83 +3,90 @@
 <div id="mainpage">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
+     <label class = "col-md-offset-3">Preventing composite waste through sharing of prepreg</label>
+              <p>This website is aimed at researchers and small companies in order to find and share prepreg (preimpregnated) fabrics. This will prevent the waste of expensive materials by sharing them before they go out of life. Futhermore, it will enable you to get hold of small quantities of material which is becoming difficult as the composites industry consolidates into large companies. Please register and begin searching for prepregs or entering your own materials to share with others.
+              </p>
+            <p>
+              If you have any problems using the site please get in touch
+            </p> 
+      </br>
       <div class="row">
-        <div class="col-md-5">
-          <h3><b>MATERIAL SEARCH</b></h3>
-        </div>
-        <div class="col-md-1">
-          <h3><em>or</em></h3>
-        </div>
-        <div class="col-md-2">
-          <br>
-          <button class="btn btn-warning" type="button" ng-click="listall()">List All Items</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label>Fibre Class:</label>
-          <select ng-model="select2.selected_Fibre" required="required" class="form-control" ng-options="option.content for option in select2.all_Fibre track by option.id" ng-change="select2.setFibreClass()">
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label ng-show="select2.selected_Fibre.content!='Any'">Fibre Code:</label>
-          <select ng-show="select2.selected_Fibre.content!='Any'" ng-model="select2.selected_Fibre_code" required="required" class="form-control" ng-options="option for option in select2.all_Fibre_code">
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label>Resin Class:</label>
-          <select ng-model="select2.selected_Resin" required="required" class="form-control" ng-options="option.content for option in select2.all_Resin track by option.id" ng-change="select2.setResinClass()">
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label ng-show="select2.selected_Resin.content!='Any'">Resin Code:</label>
-          <select ng-show="select2.selected_Resin.content!='Any'" ng-model="select2.selected_Resin_code" required="required" class="form-control" ng-options="option for option in select2.all_Resin_code">
-          </select>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <label>Weave Pattern:</label>
-          <select ng-model="select2.selected_Weave" required="required" class="form-control" ng-options="option.content for option in select2.all_Weave track by option.id">
-          </select>
-        </div>
-      </div>
-      <br><br>
-      <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-offset-1 col-md-2">
-          <button class="btn btn-info" type="button" ng-click="search()">Search Materials</button>
-        </div>
-        <div ng-show="cookie('LoginUser')==1" class="col-md-3">
-          <button ng-click="postmaterial()" class = "btn btn-success"> POST MATERIALS</button> 
-        </div>
-      </div> 
-      <br>
-      <div class="row">
-        <div class="col-md-6">
-        <label>SEARCH FOR SPECIFIC ITEMS</label>
-          <div id="searchpart">
-            <input type="text" name="keywordsearch" id="keywordsearch" ng-model="searchWord" placeholder="Searching..."> 
-            <a href="#" id="searchBtn">
-              <i class="fa fa-search fa-pull-right fa-2x" ng-click="keywordsearch()">
-              </i>
-            </a>
+        <div class = "col-md-6">
+          <div class="row">
+            <div class="col-md-7">
+              <h3><b>MATERIAL SEARCH</b></h3>
+            </div>
+            <div ng-show="cookie('LoginUser')==1" class="col-md-3">
+              <br>
+              <button ng-click="postmaterial()" class = "btn btn-success"> POST MATERIALS</button> 
+            </div>
+            <!-- <div class="col-md-1">
+              <h3><em>or</em></h3>
+            </div> -->
           </div>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Fibre Class:</label>
+              <select ng-model="select2.selected_Fibre" required="required" class="form-control" ng-options="option.content for option in select2.all_Fibre track by option.id" ng-change="select2.setFibreClass()">
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <label ng-show="select2.selected_Fibre.content!='Any'">Fibre Code:</label>
+              <select ng-show="select2.selected_Fibre.content!='Any'" ng-model="select2.selected_Fibre_code" required="required" class="form-control" ng-options="option for option in select2.all_Fibre_code">
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Resin Class:</label>
+              <select ng-model="select2.selected_Resin" required="required" class="form-control" ng-options="option.content for option in select2.all_Resin track by option.id" ng-change="select2.setResinClass()">
+              </select>
+            </div>
+          </div>
+          <div class = "row">
+            <div class="col-md-8">
+              <label ng-show="select2.selected_Resin.content!='Any'">Resin Code:</label>
+              <select ng-show="select2.selected_Resin.content!='Any'" ng-model="select2.selected_Resin_code" required="required" class="form-control" ng-options="option for option in select2.all_Resin_code">
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Weave Pattern:</label>
+              <select ng-model="select2.selected_Weave" required="required" class="form-control" ng-options="option.content for option in select2.all_Weave track by option.id">
+              </select>
+            </div>
+          </div>
+          <br><br>
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-offset-1 col-md-4">
+              <button class="btn btn-info" type="button" ng-click="search()">Search Materials</button>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-warning" type="button" ng-click="listall()">List All Items</button>
+            </div>
+          </div> 
         </br>
-        </br>
-          <label class = "col-md-offset-1">Preventing composite waste through sharing of prepreg</label>
-          <p>This website is aimed at researchers and small companies in order to find and share prepreg (preimpregnated) fabrics. This will prevent the waste of expensive materials by sharing them before they go out of life. Futhermore, it will enable you to get hold of small quantities of material which is becoming difficult as the composites industry consolidates into large companies. Please register and begin searching for prepregs or entering your own materials to share with others.
-          </p>
-        </br>
-        <p>
-          If you have any problems using the site please get in touch
-        </p>
-        </div>   
-
-        <div class="col-md-6">
+          <div class = "row">
+            <div class="col-md-9">
+              <label>SEARCH FOR SPECIFIC ITEMS</label>
+              <div id="searchpart">
+                <input type="text" name="keywordsearch" id="keywordsearch" ng-model="searchWord" placeholder="Searching..."> 
+                <a href="#" id="searchBtn">
+                  <i class="fa fa-search fa-pull-right fa-2x" ng-click="keywordsearch()">
+                  </i>
+                </a>
+              </div>
+              </br>
+              </br>
+            </div> 
+          </div>
+        </div>  
+        <div class="col-md-5">
           <label><em>NEWS</em></label>
           <a class="twitter-timeline" href="https://twitter.com/SheffComposites" data-widget-id="725329720091533313">Tweets by @SheffComposites</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
