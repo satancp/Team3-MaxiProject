@@ -15,7 +15,7 @@ angular.module('maxiProjectApp')
           $location.path('/materialDetail/' + id);
           $route.reload();
         };
-        $scope.button_fuck = {'true': 'Out', 'false': 'In'};
+        $scope.state_button = {'true': 'Out', 'false': 'In'};
         $scope.change = function(id) {
           for(var i = 0;i <= $scope.data.length - 1;i++) {
             if($scope.data[i].id === id) {

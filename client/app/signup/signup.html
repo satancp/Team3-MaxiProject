@@ -1,34 +1,34 @@
 <div class="modal-body">
     <ul>
     	<form name="form" ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}" novalidate>
-        <label>Please fill all fields with star(*)</label>
+        <label>(*) denotes a required field</label>
   			<div class="form-group">
     			<label for="name">* Username</label>
     			<input type="name" name="name" id="name" ng-model="registrationForm.name" required="required" class="form-control" min="3" max="10">
-  				<span ng-show="form.name.$error.required">Please input username!</span>
-  				<span ng-show="form.name.$error.length.min || form.name.$error.length.max">Length of username is invalid!(Should be 3-10)</span>
+  				<span ng-show="form.name.$error.required">Please input a username!</span>
+  				<span ng-show="form.name.$error.length.min || form.name.$error.length.max">Username is invalid! (Should be 3-10 characters)</span>
   			</div>
   			<div class="form-group">
     			<label for="email">* Email</label>
     			<input type="email" name="email" id="email" ng-model="registrationForm.email" required="required" class="form-control">
   				<span ng-show="form.email.$error.email">Email is invalid!</span>
   				<span ng-show="form.email.$error.required">Please input email!</span>
-  				<span ng-show="err.code == 11000 || err.code == 11001"><font color="red">This email has been used!</font></span>
+  				<span ng-show="err.code == 11000 || err.code == 11001"><font color="red">This email has already been used!</font></span>
   			</div>
 			  <div class="form-group">
     			<label for="password">* Password</label>
     			<input type="password" name="password" id="password" ng-model="registrationForm.password" required="required" class="form-control" min="7">
-  				<span ng-show="form.password.$error.length.min">Length of password is too short!(At least 7)</span>
+  				<span ng-show="form.password.$error.length.min">Password length is too short! (At least 7 characters)</span>
   			</div>
 			<div class="form-group">
     			<label for="password_confirmation">* Password confirmation</label>
     			<input type="password" name="password_confirmation" id="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control" data-password-verify="registrationForm.password">
-  				<span ng-show="form.password_confirmation.$error.passwordVerify">Password is not correct!</span>
+  				<span ng-show="form.password_confirmation.$error.passwordVerify">Passwords do not match!</span>
   			</div>
   			<div class="form-group">
     			<label for="company">* Company</label>
     			<input type="company" name="company" id="company" ng-model="registrationForm.company" required="required" class="form-control">
-  				<span ng-show="form.company.$error.required">Please input company!</span>
+  				<span ng-show="form.company.$error.required">Please input a company!</span>
   			</div>
   			<div class="form-group">
     			<label for="squestion">* Security question</label>
@@ -40,12 +40,12 @@
         <div class="form-group">
           <label for="answer">* Answer</label>
           <input type="answer" name="answer" id="answer" ng-model="registrationForm.answer" required="required" class="form-control">
-          <span ng-show="form.answer.$error.required">Please input answer!</span>
+          <span ng-show="form.answer.$error.required">Please enter an answer!</span>
         </div>
   			<div class="form-group">
     			<label for="phonenumber">* Phone number</label>
     			<input type="phonenumber" name="phonenumber" id="phonenumber" ng-model="registrationForm.phonenumber" required="required" class="form-control">
-  				<span ng-show="form.phonenumber.$error.required">Please input phone number!</span>
+  				<span ng-show="form.phonenumber.$error.required">Please enter a phone number!</span>
   			</div>
 			<button type="submit" class="btn btn-primary">Register</button>
 			<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
