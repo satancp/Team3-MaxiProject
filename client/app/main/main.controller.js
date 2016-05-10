@@ -38,13 +38,24 @@ angular.module('maxiProjectApp')
       $scope.status3 = {
         isopen: false
       };
+      var temp_array = [];
+      for(var temp in $scope.data) {
+        if(temp.fibre_class != 'Carbon' && temp.fibre_class != 'Glass' && temp.fibre_class != 'Kevlar') {
+          if(!temp_array.includes(temp.fibre_class)) {
+            temp_array.push(temp.fibre_class);
+          }
+        }
+      }
+      for(var t in temp_array) {
+        $scope.select2.all_Fibre.push({id:$scope.select2.all_Fibre.length,content:t});
+      }
+      $scope.select2.all_Fibre.push({id:$scope.select2.all_Fibre.length,content:'Other'});
       $scope.select2 = {
         all_Fibre: [
           {id:'0',content:'Any'},
           {id:'1',content:'Carbon'},
           {id:'2',content:'Glass'},
-          {id:'3',content:'Kevlar'},
-          {id:'4',content:'Other'}
+          {id:'3',content:'Kevlar'}
         ],
         selected_Fibre: {id:'0',content:'Any'},
         all_Fibre_code: [],
