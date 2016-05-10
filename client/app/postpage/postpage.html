@@ -21,9 +21,9 @@
 				</div>
 				<div class="col-md-7">
 					<p class="input-group">
-						<input type="manufacturer_date" ng-model="postForm.manufacturer_date" required="required" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup.opened" datepicker-options="dateOptions">
+						<input type="manufacturer_date" ng-model="postForm.manufacturer_date" required="required" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup1.opened" datepicker-options="dateOptions">
 						<span class="input-group-btn">
-							<button type="button" class="btn btn-default" ng-click="open()">
+							<button type="button" class="btn btn-default" ng-click="open1()">
 								<i class="fa fa-calendar"></i>
 							</button>
 						</span>
@@ -36,7 +36,14 @@
 					<label for="use_by_date">Expire Date: </label>
 				</div>
 				<div class="col-md-7">
-					<input type="use_by_date" ng-model="postForm.use_by_date" required="required" class="form-control">
+					<p class="input-group">
+						<input type="use_by_date" ng-model="postForm.use_by_date" required="required" class="form-control" uib-datepicker-popup="{{format}}" is-open="popup2.opened" datepicker-options="dateOptions">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default" ng-click="open2()">
+								<i class="fa fa-calendar"></i>
+							</button>
+						</span>
+					</p>
 				</div>
 			</div>
 			</br>

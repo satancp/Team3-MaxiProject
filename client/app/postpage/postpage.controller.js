@@ -21,6 +21,8 @@ angular.module('maxiProjectApp')
         data.fabric_weight = $scope.postForm.fabric_weight;
         data.quantity = $scope.postForm.quantity;
         data.comments = $scope.postForm.comments;
+        data.poster_id = ipCookie('Login').id;
+        data.stock_state = true;
         Material.addMaterials(data).success(function(added_material) {
         	$uibModalInstance.dismiss('ok');
         	$scope.err = undefined;
@@ -79,11 +81,19 @@ angular.module('maxiProjectApp')
 	    showWeeks: false
 	  };
 
-    $scope.open = function() {
-      $scope.popup.opened = true;
+    $scope.open1 = function() {
+      $scope.popup1.opened = true;
     };
 
-    $scope.popup = {
+    $scope.popup1 = {
+      opened: false
+    };
+
+    $scope.open2 = function() {
+      $scope.popup2.opened = true;
+    };
+
+    $scope.popup2 = {
       opened: false
     };
 
