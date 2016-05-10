@@ -2,10 +2,15 @@
 
 angular.module('maxiProjectApp')
   .controller('InformationdisplayCtrl', function ($scope, ipCookie, $filter, NgTableParams, $location, $route, $routeParams, Material) {
+    $scope.data = [];
+    $scope.cookie = ipCookie;
     if($routeParams.type === 'list') {
       Material.getallMaterial().success(function(data) {
-        $scope.data = data;
-        $scope.cookie = ipCookie;
+        for(var i = 0;i <= data.length - 1;i++) {
+          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+            $scope.data.push(data[i]);
+          }
+        }
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
@@ -50,8 +55,11 @@ angular.module('maxiProjectApp')
         weave: query_array[4]
       };
       Material.searchMaterials(query).success(function(result) {
-        $scope.data = result;
-        $scope.cookie = ipCookie;
+        for(var i = 0;i <= data.length - 1;i++) {
+          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+            $scope.data.push(data[i]);
+          }
+        }
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
@@ -88,8 +96,11 @@ angular.module('maxiProjectApp')
     }
     else {
       Material.keywordSearchMaterial($routeParams.content).success(function(data) {
-        $scope.data = data;
-        $scope.cookie = ipCookie;
+        for(var i = 0;i <= data.length - 1;i++) {
+          if((data[i].stock_state && $scope.cookie('Login').power == 0) || ($scope.cookie('Login').power == 1)) {
+            $scope.data.push(data[i]);
+          }
+        }
         $scope.go = function(id) {
           $location.path('/materialDetail/' + id);
           $route.reload();
