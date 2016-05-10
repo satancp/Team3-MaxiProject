@@ -102,17 +102,18 @@ angular.module('maxiProjectApp')
         }
       };
       var temp_array = [];
-      for(var temp in $scope.data) {
+      for(var i = 0;i <= $scope.data.length - 1;i++) {
+        var temp = $scope.data[i];
         if(temp.fibre_class != 'Carbon' && temp.fibre_class != 'Glass' && temp.fibre_class != 'Kevlar') {
           if(!temp_array.includes(temp.fibre_class)) {
             temp_array.push(temp.fibre_class);
           }
         }
       }
-      for(var t in temp_array) {
+      for(var j = 0;j <= temp_array.length - 1;j++) {
+        var t = temp_array[j];
         $scope.select2.all_Fibre.push({id:$scope.select2.all_Fibre.length,content:t});
       }
       $scope.select2.all_Fibre.push({id:$scope.select2.all_Fibre.length,content:'Other'});
-      
     });
 });
