@@ -4,7 +4,7 @@
 	</h2>
 </div>
 <div class="modal-body">
-	<form ng-submit="postBtnClick(postForm)" role="form" ng-init="postForm = {}">
+	<form ng-submit="postBtnClick(postForm)" role="form">
 		<div class="form-group">
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
@@ -14,6 +14,7 @@
 					<input type="manufacturer" ng-model="postForm.manufacturer" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="manufacturer_date">Manufacturing Date: </label>
@@ -29,6 +30,7 @@
 					</p>
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="use_by_date">Expire Date: </label>
@@ -37,18 +39,23 @@
 					<input type="use_by_date" ng-model="postForm.use_by_date" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="fibre_class">Fibre Class: </label>
 				</div>
-				<div>
+				<div class = "col-md-7" placeholder="Please Input...">
 					<select ng-model="select.selected_Fibre" required="required" class="form-control" ng-options="option.content for option in select.all_Fibre track by option.id" ng-change="select.setFibreInputState()">
           			</select>
 				</div>
-				<div ng-show="select.state" class="col-md-7">
-					<input type="fibre_class" ng-model="select.input_Fibre" required="required" class="form-control">
+			</div>
+			</br>
+			<div class = "row">
+				<div ng-show="select.state" class="col-md-offset-4 col-md-7">
+					<input type="fibre_class" ng-model="select.input_Fibre" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="fibre_code">Fibre Code: </label>
@@ -57,6 +64,7 @@
 					<input type="fibre_code" ng-model="postForm.fibre_code" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="resin_class">Resin Class: </label>
@@ -65,6 +73,7 @@
 					<input type="resin_class" ng-model="postForm.resin_class" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="weave_pattern">Weave Pattern: </label>
@@ -73,6 +82,7 @@
 					<input type="weave_pattern" ng-model="postForm.weave_pattern" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="fabric_weight">Fabric Weight(gsm): </label>
@@ -81,6 +91,7 @@
 					<input type="fabric_weight" ng-model="postForm.fabric_weight" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="quantity">Quantity Available(m<sup>2</sup>): </label>
@@ -89,6 +100,7 @@
 					<input type="quantity" ng-model="postForm.quantity" required="required" class="form-control">
 				</div>
 			</div>
+			</br>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-3">
 					<label for="comments">Other Comments</label>
@@ -98,9 +110,10 @@
 				</div>
 			</div>
 		</div>
+		<button type="submit" class="btn btn-primary col-md-offset-1 col-md-3">Post</button>
+		<button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
 	</form>
 </div>
 <div class="modal-footer">
-	<button type="submit" class="btn btn-primary">Post</button>
-	<button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	
 </div>

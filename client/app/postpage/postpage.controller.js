@@ -2,6 +2,7 @@
 
 angular.module('maxiProjectApp')
   .controller('PostpageCtrl', function ($scope, ipCookie, $location, $route, $uibModalInstance, Material) {
+    $scope.postForm = {};
     $scope.postBtnClick = function() {
         var data = new Object();
         data.manufacturer = $scope.postForm.manufacturer;
@@ -38,9 +39,13 @@ angular.module('maxiProjectApp')
           {id:'3',content:'Other'}
         ],
         selected_Fibre: {id:'0',content:'Carbon'},
+        input_Fibre: '',
         setFibreInputState : function() {
-          if(selected_Fibre.content == 'Carbon') {
-            state = true;
+          if($scope.select.selected_Fibre.content == 'Other') {
+            $scope.select.state = true;
+          }
+          else {
+            $scope.select.state = false;
           }
         },
         state : false
