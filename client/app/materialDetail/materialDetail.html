@@ -26,7 +26,7 @@
 								<label>Manufacturing Date: </label>
 							</div>
 							<div class="col-md-7 param">
-								<label>{{ms.manufacturer_date}}</label>
+								<label>{{ms.manufacturer_date.split("T")[0]}}</label>
 							</div>
 						</div>
 						<div class="row">
@@ -34,7 +34,7 @@
 								<label>Due Date: </label>
 							</div>
 							<div class="col-md-7 param">
-								<label>{{ms.use_by_date}}</label>
+								<label>{{ms.use_by_date.split("T")[0]}}</label>
 							</div>
 						</div>
 						<div class="row">

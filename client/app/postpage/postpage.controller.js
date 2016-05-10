@@ -6,21 +6,42 @@ angular.module('maxiProjectApp')
     $scope.postBtnClick = function() {
         var data = new Object();
         data.manufacturer = $scope.postForm.manufacturer;
-        data.manufacturer_date = $scope.postForm.manufacturer_date;
-        data.use_by_date = $scope.postForm.use_by_date;
-        if($scope.select.selected_Fibre.content != 'Carbon') {
+        var year1 = $scope.postForm.manufacturer_date.getFullYear();
+        var year2 = $scope.postForm.use_by_date.getFullYear();
+        var month1 = $scope.postForm.manufacturer_date.getMonth();
+        var month2 = $scope.postForm.use_by_date.getMonth();
+        var day1 = $scope.postForm.manufacturer_date.getDay();
+        var day2 = $scope.postForm.use_by_date.getDay();
+        if(month1.toString().length != 2) {
+          month1 = '0' + month1;
+        }
+        if(month2.toString().length != 2) {
+          month2 = '0' + month2;
+        }
+        if(day1.toString().length != 2) {
+          day1 = '0' + day1;
+        }
+        if(day2.toString().length != 2) {
+          day2 = '0' + day2;
+        }
+        data.manufacturer_date = year1 + "-" + month1 + "-" + day1 + " 00:00:00";
+        data.use_by_date = year2 + "-" + month2 + "-" + day2 + " 00:00:00";
+        if($scope.select.selected_Fibre.content != 'Other') {
             data.fibre_class = $scope.select.selected_Fibre.content;
         }
         else {
             data.fibre_class = $scope.select.input_Fibre;
         }
-        data.fibre_class = $scope.postForm.fibre_class;
         data.fibre_code = $scope.postForm.fibre_code;
-        data.resin_class = $scope.postForm.resin_class;
+        data.resin_classification = $scope.postForm.resin_class;
+        data.resin_details = $scope.postForm.resin_code;
         data.weave_pattern = $scope.postForm.weave_pattern;
-        data.fabric_weight = $scope.postForm.fabric_weight;
-        data.quantity = $scope.postForm.quantity;
+        data.fabric_weight = parseInt($scope.postForm.fabric_weight);
+        data.quantity = parseInt($scope.postForm.fabric_weight);
         data.comments = $scope.postForm.comments;
+        if(data.comments == undefined) {
+          data.comments = "";
+        }
         data.poster_id = ipCookie('Login').id;
         data.stock_state = true;
         Material.addMaterials(data).success(function(added_material) {
